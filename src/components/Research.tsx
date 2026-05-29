@@ -1,114 +1,84 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const articles = [
+const researchPapers = [
   {
     id: 1,
-    title: 'Scaling Laws in Decentralized MoE Models',
-    excerpt: 'Exploring the performance characteristics of Mixture-of-Experts architectures distributed across heterogeneous node clusters in the INEXA runtime.',
-    date: 'Oct 12, 2026',
-    author: 'Dr. Sarah Chen',
-    category: 'AI Research',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop'
+    title: 'Adaptive Cognition in Long-Running Autonomous Agents',
+    description: 'An analysis of memory-augmented reflection loops and their impact on reducing hallucination in durable AI execution environments.',
+    date: 'Oct 2026',
+    category: 'Autonomous Cognition',
+    authors: 'Inexa Research'
   },
   {
     id: 2,
-    title: 'Zero-Knowledge Proofs for Verifiable Inference',
-    excerpt: 'How INEXA utilizes zk-SNARKs to guarantee the cryptographic correctness of ML model outputs without revealing proprietary model weights.',
-    date: 'Sep 28, 2026',
-    author: 'Alex Vollmer',
-    category: 'Cryptography',
-    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop'
+    title: 'Durable Execution Models for Multi-Provider Routing',
+    description: 'Evaluating fault-tolerance and retry semantics when orchestrating complex DAGs across heterogeneous LLM providers.',
+    date: 'Sep 2026',
+    category: 'Orchestration Systems',
+    authors: 'Inexa Core'
   },
   {
     id: 3,
-    title: 'Tokenomics of Agentic Supply Chains',
-    excerpt: 'A game-theoretic analysis of the incentive structures required to align autonomous AI agents coordinating global logistics.',
-    date: 'Sep 15, 2026',
-    author: 'Elena Rodriguez',
-    category: 'Web3 & Economics',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop'
+    title: 'Zero-Knowledge Proofs in Decentralized Inference',
+    description: 'Applying zk-SNARKs to guarantee the cryptographic correctness of ML model outputs without exposing proprietary model weights.',
+    date: 'Aug 2026',
+    category: 'Adaptive Intelligence',
+    authors: 'Inexa Cryptography Lab'
   }
 ];
 
 export default function Research() {
   return (
-    <section id="research" className="py-24 relative z-10 border-t border-slate-800/50 bg-slate-950/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="max-w-2xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold text-white mb-4"
-            >
-              Latest Research
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-slate-400 text-lg"
-            >
-              Deep dives into AI architectures, cryptography, and decentralized systems from the INEXA labs.
-            </motion.p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+    <section id="research" className="py-32 relative z-10 border-t border-slate-800/50 bg-slate-950">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-6 md:mt-0"
+            className="text-3xl md:text-5xl font-semibold tracking-tighter text-white"
           >
-            <a href="#" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium transition-colors group">
-              View all publications
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
+            Research
+          </motion.h2>
+          <motion.a
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            href="#" 
+            className="mt-6 md:mt-0 text-slate-400 hover:text-slate-200 font-medium tracking-tight inline-flex items-center transition-colors"
+          >
+            View all publications <ArrowRight className="w-4 h-4 ml-2" />
+          </motion.a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {articles.map((article, index) => (
+        <div className="flex flex-col">
+          {researchPapers.map((paper, index) => (
             <motion.article 
-              key={article.id}
-              initial={{ opacity: 0, y: 20 }}
+              key={paper.id}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card rounded-2xl overflow-hidden group flex flex-col"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group py-10 border-t border-slate-800/50 grid grid-cols-1 md:grid-cols-4 gap-6 hover:bg-slate-900/30 transition-colors -mx-6 px-6 rounded-2xl"
             >
-              <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-slate-900/60 z-10 group-hover:bg-slate-900/20 transition-colors duration-500" />
-                <img 
-                  src={article.image} 
-                  alt={article.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-400 bg-slate-900/80 backdrop-blur-sm rounded-full border border-cyan-500/20">
-                    {article.category}
-                  </span>
-                </div>
+              <div className="md:col-span-1 flex flex-col space-y-2">
+                <span className="text-sm font-semibold tracking-widest uppercase text-slate-500">
+                  {paper.category}
+                </span>
+                <span className="text-sm text-slate-600">
+                  {paper.date}
+                </span>
               </div>
-              
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors line-clamp-2">
-                  {article.title}
+              <div className="md:col-span-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-slate-200 mb-3 tracking-tighter group-hover:text-white transition-colors">
+                  {paper.title}
                 </h3>
-                <p className="text-slate-400 text-sm mb-6 flex-grow line-clamp-3">
-                  {article.excerpt}
+                <p className="text-slate-400 leading-relaxed tracking-tight mb-4">
+                  {paper.description}
                 </p>
-                
-                <div className="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-slate-800/50">
-                  <div className="flex items-center">
-                    <User className="w-3 h-3 mr-1" />
-                    {article.author}
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar className="w-3 h-3 mr-1" />
-                    {article.date}
-                  </div>
+                <div className="text-sm text-slate-500 font-medium">
+                  {paper.authors}
                 </div>
               </div>
             </motion.article>

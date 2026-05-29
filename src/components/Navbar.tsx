@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Menu, X, Hexagon, ShoppingCart, Coins, Truck } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-const ecosystemItems = [
-  { name: 'Hexa Runtime', icon: Hexagon, desc: 'Decentralized AI execution layer' },
-  { name: 'Marketplace', icon: ShoppingCart, desc: 'Trade AI models and datasets' },
-  { name: 'Finance', icon: Coins, desc: 'DeFi primitives for intelligence' },
-  { name: 'Logistic & Supply Chain', icon: Truck, desc: 'Smart logistics network' },
-];
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.3 6-1.5 6-6.76a5.2 5.2 0 0 0-1.5-3.8 4.3 4.3 0 0 0 0-3.8s-1.2-.4-4 1.5a13.2 13.2 0 0 0-7 0c-2.8-1.9-4-1.5-4-1.5a4.3 4.3 0 0 0 0 3.8A5.2 5.2 0 0 0 3 12c0 5.2 3 6.4 6 6.76a4.8 4.8 0 0 0-1 3.24v4" />
+    <path d="M3 19s1 1 3 1 2-1 3-1" />
+  </svg>
+);
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isEcosystemOpen, setIsEcosystemOpen] = useState(false);
 
   return (
     <nav className="fixed w-full z-50 glass border-b border-slate-800/50">
@@ -28,53 +27,13 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsEcosystemOpen(true)}
-              onMouseLeave={() => setIsEcosystemOpen(false)}
-            >
-              <button className="flex items-center space-x-1 text-slate-300 hover:text-white transition-colors py-2">
-                <span>Ecosystem</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isEcosystemOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              <AnimatePresence>
-                {isEcosystemOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 mt-2 w-72 glass-card rounded-xl overflow-hidden shadow-xl"
-                  >
-                    <div className="p-2">
-                      {ecosystemItems.map((item) => (
-                        <a 
-                          key={item.name} 
-                          href="#ecosystem" 
-                          className="flex items-start p-3 rounded-lg hover:bg-slate-800/50 transition-colors group"
-                        >
-                          <div className="p-2 bg-slate-800 rounded-md group-hover:bg-cyan-500/20 group-hover:text-cyan-400 transition-colors">
-                            <item.icon className="w-5 h-5 text-slate-400 group-hover:text-cyan-400" />
-                          </div>
-                          <div className="ml-3">
-                            <p className="text-sm font-medium text-white">{item.name}</p>
-                            <p className="text-xs text-slate-400 mt-0.5">{item.desc}</p>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <a href="#research" className="text-slate-300 hover:text-white transition-colors">Research</a>
-            <a href="#about" className="text-slate-300 hover:text-white transition-colors">About</a>
-            
-            <button className="px-5 py-2 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-200 transition-colors">
-              Launch App
-            </button>
+            <a href="#products" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Products</a>
+            <a href="#ecosystem" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
+            <a href="#research" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Research</a>
+            <a href="#about" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+            <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+              <GithubIcon className="w-5 h-5" />
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -98,40 +57,45 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="md:hidden glass border-t border-slate-800/50 overflow-hidden"
           >
-            <div className="px-4 pt-2 pb-6 space-y-4">
-              <div className="space-y-2">
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Ecosystem</div>
-                {ecosystemItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href="#ecosystem"
-                    className="flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-slate-800/50 text-slate-300"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.name}</span>
-                  </a>
-                ))}
-              </div>
-              <div className="border-t border-slate-800/50 pt-4 flex flex-col space-y-4">
-                <a 
-                  href="#research" 
-                  className="px-3 text-slate-300 hover:text-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Research
-                </a>
-                <a 
-                  href="#about" 
-                  className="px-3 text-slate-300 hover:text-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About
-                </a>
-                <button className="mx-3 px-5 py-2 rounded-full bg-white text-slate-900 font-medium mt-2">
-                  Launch App
-                </button>
-              </div>
+            <div className="px-4 pt-4 pb-6 flex flex-col space-y-4">
+              <a 
+                href="#products" 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Products
+              </a>
+              <a 
+                href="#ecosystem" 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Ecosystem
+              </a>
+              <a 
+                href="#research" 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Research
+              </a>
+              <a 
+                href="#about" 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href="https://github.com/eksapurnomo/inexa-ai" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-3 py-2 text-slate-300 hover:text-white flex items-center space-x-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <GithubIcon className="w-5 h-5" />
+                <span>GitHub</span>
+              </a>
             </div>
           </motion.div>
         )}

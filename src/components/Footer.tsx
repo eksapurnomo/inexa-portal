@@ -1,4 +1,11 @@
-import { Mail, Globe, MessageCircle, Share2 } from 'lucide-react';
+import { Mail } from 'lucide-react';
+
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.3 6-1.5 6-6.76a5.2 5.2 0 0 0-1.5-3.8 4.3 4.3 0 0 0 0-3.8s-1.2-.4-4 1.5a13.2 13.2 0 0 0-7 0c-2.8-1.9-4-1.5-4-1.5a4.3 4.3 0 0 0 0 3.8A5.2 5.2 0 0 0 3 12c0 5.2 3 6.4 6 6.76a4.8 4.8 0 0 0-1 3.24v4" />
+    <path d="M3 19s1 1 3 1 2-1 3-1" />
+  </svg>
+);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,65 +16,57 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           
           <div className="md:col-span-1">
-            <span className="text-2xl font-bold tracking-tighter text-white block mb-4">
-              INEX<span className="text-cyan-400">A</span>
-            </span>
+            <img 
+              src="/Contemporary Minimalist Logo for inexa.space - Teal-1@1.25x.svg" 
+              alt="INEXA Logo" 
+              className="h-8 w-auto object-contain mb-6" 
+            />
             <p className="text-sm text-slate-400 mb-6">
-              Building the decentralized intelligence ecosystem for the next generation of autonomous networks.
+              Building the infrastructure layer for autonomous intelligence and enterprise AI orchestration.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                <Share2 className="w-5 h-5" />
+              <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors">
+                <GithubIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                <Globe className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                <MessageCircle className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
+              <a href="mailto:eksa@inexa.space" className="text-slate-500 hover:text-cyan-400 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           <div>
+            <h4 className="text-white font-semibold mb-4">Products</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#products" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</a></li>
+              <li><a href="#products" className="text-slate-400 hover:text-white transition-colors">Hexa Cognitive</a></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-white font-semibold mb-4">Ecosystem</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Marketplace</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Finance Layer</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Supply Chain Network</a></li>
+              <li><a href="#ecosystem" className="text-slate-400 hover:text-white transition-colors">AI SaaS Platforms</a></li>
+              <li><a href="#ecosystem" className="text-slate-400 hover:text-white transition-colors">Enterprise Automation</a></li>
+              <li><a href="#ecosystem" className="text-slate-400 hover:text-white transition-colors">Finance Infrastructure</a></li>
+              <li><a href="#ecosystem" className="text-slate-400 hover:text-white transition-colors">Logistics & Supply Chain</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Research</h4>
+            <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Publications</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Whitepaper</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Grants</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-semibold mb-4">About</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Company</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Press Kit</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-slate-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#research" className="text-slate-400 hover:text-white transition-colors">Research</a></li>
+              <li><a href="mailto:eksa@inexa.space" className="text-slate-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 
         </div>
 
         <div className="border-t border-slate-800/80 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-          <p>&copy; {currentYear} INEXA.space. All rights reserved.</p>
+          <p>&copy; {currentYear} Copyright INEXA. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="mailto:eksa@inexa.space" className="hover:text-white transition-colors">eksa@inexa.space</a>
           </div>
         </div>
       </div>

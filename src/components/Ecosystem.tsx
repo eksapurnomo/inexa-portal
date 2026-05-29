@@ -1,34 +1,42 @@
 import { motion, type Variants } from 'framer-motion';
-import { Hexagon, ShoppingCart, Coins, Truck, ArrowRight } from 'lucide-react';
+import { Cloud, Zap, Landmark, ShoppingCart, Truck, Activity, ArrowRight } from 'lucide-react';
 
 const cards = [
   {
-    id: 'runtime',
-    title: 'Hexa Runtime',
-    description: 'A distributed execution layer enabling seamless and secure AI model inference across decentralized nodes globally.',
-    icon: Hexagon,
-    color: 'from-blue-500 to-cyan-400',
+    id: 'ai-saas',
+    title: 'AI SaaS Platforms',
+    description: 'Build scalable AI-native applications, autonomous copilots, and intelligent workflow systems powered by durable orchestration.',
+    icon: Cloud,
+  },
+  {
+    id: 'enterprise-automation',
+    title: 'Enterprise Automation',
+    description: 'Enable autonomous business operations, adaptive workflows, decision automation, and enterprise-grade process orchestration.',
+    icon: Zap,
+  },
+  {
+    id: 'finance-infrastructure',
+    title: 'Finance Infrastructure',
+    description: 'Power next-generation digital finance systems including payment infrastructure, intelligent financial operations, and crypto transaction support.',
+    icon: Landmark,
   },
   {
     id: 'marketplace',
-    title: 'Marketplace',
-    description: 'An open, permissionless exchange for high-quality datasets, AI agents, and custom machine learning models.',
+    title: 'Marketplace Systems',
+    description: 'Support real digital commerce ecosystems, AI-powered ecommerce platforms, transaction orchestration, and scalable marketplace operations.',
     icon: ShoppingCart,
-    color: 'from-cyan-400 to-emerald-400',
   },
   {
-    id: 'finance',
-    title: 'Finance Layer',
-    description: 'Embedded DeFi primitives providing seamless tokenization, staking, and automated rewards for ecosystem participants.',
-    icon: Coins,
-    color: 'from-violet-500 to-fuchsia-400',
-  },
-  {
-    id: 'supply-chain',
-    title: 'Supply Chain Network',
-    description: 'Smart logistics protocols utilizing AI predictions to optimize decentralized physical infrastructure networks (DePIN).',
+    id: 'logistics',
+    title: 'Logistics & Supply Chain',
+    description: 'Enable intelligent logistics orchestration, supply chain visibility, adaptive routing, and distributed workflow coordination.',
     icon: Truck,
-    color: 'from-amber-400 to-orange-500',
+  },
+  {
+    id: 'autonomous-ops',
+    title: 'Autonomous Operations',
+    description: 'Deploy long-running autonomous systems capable of adaptive reasoning, self-correction, memory persistence, and multi-agent coordination.',
+    icon: Activity,
   }
 ];
 
@@ -36,9 +44,7 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -47,31 +53,31 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' }
+    transition: { duration: 0.6, ease: 'easeOut' }
   },
 };
 
 export default function Ecosystem() {
   return (
-    <section id="ecosystem" className="py-24 relative z-10">
+    <section id="ecosystem" className="py-32 relative z-10 bg-slate-950/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight"
           >
-            The <span className="text-gradient">INEXA</span> Ecosystem
+            Industries Powered by <span className="text-gradient">INEXA</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate-400 max-w-2xl mx-auto text-lg"
+            className="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed"
           >
-            Four synergistic layers powering the future of decentralized intelligence and commerce.
+            Our core infrastructure powers transformative autonomous systems across every major sector of the digital economy.
           </motion.p>
         </div>
 
@@ -80,29 +86,27 @@ export default function Ecosystem() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {cards.map((card) => (
             <motion.div key={card.id} variants={itemVariants} className="h-full">
-              <div className="glass-card rounded-2xl p-6 h-full flex flex-col group cursor-pointer relative overflow-hidden">
-                {/* Background gradient blur on hover */}
-                <div className={`absolute -inset-2 bg-gradient-to-r ${card.color} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500 rounded-full`} />
+              <div className="glass-card rounded-2xl p-8 h-full flex flex-col group cursor-pointer relative overflow-hidden border border-slate-800/60 hover:border-slate-700 hover:bg-slate-900/40 transition-all duration-500 hover:-translate-y-1">
                 
-                <div className="relative z-10">
-                  <div className={`w-12 h-12 rounded-xl bg-slate-800/80 flex items-center justify-center mb-6 border border-slate-700/50 group-hover:border-slate-600 transition-colors`}>
-                    <card.icon className="w-6 h-6 text-slate-300 group-hover:text-white transition-colors" />
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/50 flex items-center justify-center mb-6 group-hover:border-slate-600 transition-colors shadow-sm">
+                    <card.icon className="w-6 h-6 text-slate-400 group-hover:text-slate-200 transition-colors" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-semibold text-white mb-3 tracking-tighter group-hover:text-slate-100 transition-colors">
                     {card.title}
                   </h3>
                   
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow group-hover:text-slate-300 transition-colors">
                     {card.description}
                   </p>
                   
-                  <div className="mt-auto flex items-center text-sm font-medium text-slate-300 group-hover:text-cyan-400 transition-colors">
-                    Learn more <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-wider">
+                    Explore Sector <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </div>
