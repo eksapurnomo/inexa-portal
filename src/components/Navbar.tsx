@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -11,26 +12,27 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="fixed w-full z-50 glass border-b border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center cursor-pointer mr-8 py-2" onClick={() => window.scrollTo(0,0)}>
+          <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer mr-8 py-2" onClick={() => window.scrollTo(0,0)}>
             <img 
               src="/Contemporary Minimalist Logo for inexa.space - Teal-1@1.25x.svg" 
               alt="INEXA Logo" 
               className="h-8 md:h-10 lg:h-12 w-auto max-w-[160px] md:max-w-[220px] object-contain transform transition-transform hover:scale-105" 
             />
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#products" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Products</a>
-            <a href="#ecosystem" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
-            <a href="#research" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Research</a>
-            <a href="#about" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+            <Link to="/architecture" className={`text-sm font-medium transition-colors ${location.pathname === '/architecture' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Architecture</Link>
+            <a href={location.pathname === '/' ? '#products' : '/#products'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Products</a>
+            <a href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
+            <a href={location.pathname === '/' ? '#research' : '/#research'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Research</a>
             <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
               <GithubIcon className="w-5 h-5" />
             </a>
@@ -58,33 +60,33 @@ export default function Navbar() {
             className="md:hidden glass border-t border-slate-800/50 overflow-hidden"
           >
             <div className="px-4 pt-4 pb-6 flex flex-col space-y-4">
+              <Link 
+                to="/architecture" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/architecture' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Architecture
+              </Link>
               <a 
-                href="#products" 
+                href={location.pathname === '/' ? '#products' : '/#products'} 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Products
               </a>
               <a 
-                href="#ecosystem" 
+                href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Ecosystem
               </a>
               <a 
-                href="#research" 
+                href={location.pathname === '/' ? '#research' : '/#research'} 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Research
-              </a>
-              <a 
-                href="#about" 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
               </a>
               <a 
                 href="https://github.com/eksapurnomo/inexa-ai" 

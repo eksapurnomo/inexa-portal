@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Database, Cpu, BrainCircuit, LayoutGrid, ArrowUp } from 'lucide-react';
+import { Database, Cpu, BrainCircuit, LayoutGrid, ArrowUp, Cloud } from 'lucide-react';
 
 const layers = [
   {
@@ -8,7 +8,7 @@ const layers = [
     description: 'Enterprise ecosystems powered by our infrastructure',
     icon: LayoutGrid,
     color: 'border-slate-800 bg-slate-900/40 text-slate-200',
-    delay: 0.8
+    delay: 1.0
   },
   {
     id: 'cognitive',
@@ -16,7 +16,7 @@ const layers = [
     description: 'Adaptive planning, memory, and multi-agent coordination',
     icon: BrainCircuit,
     color: 'border-slate-800/80 bg-slate-900/60 text-slate-300',
-    delay: 0.6
+    delay: 0.8
   },
   {
     id: 'runtime',
@@ -24,14 +24,22 @@ const layers = [
     description: 'Durable execution, orchestration, and provider routing',
     icon: Cpu,
     color: 'border-slate-700/60 bg-slate-800/30 text-slate-300',
+    delay: 0.6
+  },
+  {
+    id: 'providers',
+    title: 'AI Providers',
+    description: 'Underlying foundation models and intelligence systems',
+    icon: Cloud,
+    color: 'border-slate-700/60 bg-slate-800/30 text-slate-400',
     delay: 0.4
   },
   {
     id: 'infrastructure',
-    title: 'Decentralized Infrastructure',
-    description: 'Verifiable compute, storage, and consensus protocols',
+    title: 'Infrastructure',
+    description: 'Cloud, Compute, GPU, Storage, Networking',
     icon: Database,
-    color: 'border-slate-700 bg-slate-800/50 text-slate-400',
+    color: 'border-slate-700 bg-slate-800/50 text-slate-500',
     delay: 0.2
   }
 ];
@@ -58,7 +66,7 @@ export default function Architecture() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-lg leading-relaxed tracking-tight"
           >
-            A cohesive stack designed from the ground up for scalable, autonomous intelligence.
+            INEXA sits above modern AI providers and infrastructure, providing orchestration, cognition, execution, and operational intelligence.
           </motion.p>
         </div>
 

@@ -1,27 +1,18 @@
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import BrandStatement from './components/BrandStatement';
-import Metrics from './components/Metrics';
-import Products from './components/Products';
-import Architecture from './components/Architecture';
-import Ecosystem from './components/Ecosystem';
-import Research from './components/Research';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import ArchitecturePage from './pages/ArchitecturePage';
 
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-slate-500/30">
       <Navbar />
       <main>
-        <Hero />
-        <BrandStatement />
-        <Metrics />
-        <Products />
-        <Architecture />
-        <Ecosystem />
-        <Research />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/architecture" element={<ArchitecturePage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
