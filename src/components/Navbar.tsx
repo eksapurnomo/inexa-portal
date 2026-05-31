@@ -31,10 +31,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/products" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/products') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Products</Link>
             <Link to="/architecture" className={`text-sm font-medium transition-colors ${location.pathname === '/architecture' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Architecture</Link>
-            <Link to="/docs" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/docs') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Docs</Link>
             <a href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
-            <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
             <Link to="/company" className={`text-sm font-medium transition-colors ${location.pathname === '/company' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Company</Link>
+            <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
+            <Link to="/docs" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/docs') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Docs</Link>
             <a href="/company#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
             <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
               <GithubIcon className="w-5 h-5" />
@@ -77,13 +77,6 @@ export default function Navbar() {
               >
                 Architecture
               </Link>
-              <Link 
-                to="/docs" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname.startsWith('/docs') ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Docs
-              </Link>
               <a 
                 href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
@@ -92,6 +85,13 @@ export default function Navbar() {
                 Ecosystem
               </a>
               <Link 
+                to="/company" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/company' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Company
+              </Link>
+              <Link 
                 to="/research" 
                 className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/research' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -99,11 +99,11 @@ export default function Navbar() {
                 Research
               </Link>
               <Link 
-                to="/company" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/company' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
+                to="/docs" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname.startsWith('/docs') ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Company
+                Docs
               </Link>
               <a 
                 href="/company#contact" 
