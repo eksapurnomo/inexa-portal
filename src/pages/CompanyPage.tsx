@@ -139,7 +139,7 @@ export default function CompanyPage() {
                 Public repositories, architecture experiments, runtime infrastructure, cognitive systems, and research initiatives.
               </p>
               <a 
-                href="https://github.com/eksapurnomo/inexa-ai" 
+                href="https://github.com/exa-space" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-lg border border-slate-700 transition-colors"
@@ -164,7 +164,7 @@ export default function CompanyPage() {
                 </div>
               </a>
 
-              <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-5 border border-slate-800/60 rounded-xl bg-slate-900/20 hover:bg-slate-800/40 hover:border-slate-700 transition-all group">
+              <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-5 border border-slate-800/60 rounded-xl bg-slate-900/20 hover:bg-slate-800/40 hover:border-slate-700 transition-all group">
                 <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-700 transition-colors">
                   <GithubIcon className="w-5 h-5 text-slate-400 group-hover:text-white" />
                 </div>

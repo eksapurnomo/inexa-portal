@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
             <Link to="/company" className={`text-sm font-medium transition-colors ${location.pathname === '/company' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Company</Link>
             <a href="/company#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
-            <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+            <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
               <GithubIcon className="w-5 h-5" />
             </a>
           </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                 Contact
               </a>
               <a 
-                href="https://github.com/eksapurnomo/inexa-ai" 
+                href="https://github.com/exa-space" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="px-3 py-2 text-slate-300 hover:text-white flex items-center space-x-2"

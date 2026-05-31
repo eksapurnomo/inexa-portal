@@ -26,7 +26,7 @@ export default function Footer() {
               Building the infrastructure layer for autonomous intelligence and enterprise AI orchestration.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors">
+              <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors">
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a href="mailto:eksa@inexa.space" className="text-slate-500 hover:text-cyan-400 transition-colors">

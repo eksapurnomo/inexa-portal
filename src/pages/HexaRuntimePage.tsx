@@ -11,6 +11,13 @@ const SidebarLink = ({ href, children }: { href: string, children: React.ReactNo
   </a>
 );
 
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.3 6-1.5 6-6.76a5.2 5.2 0 0 0-1.5-3.8 4.3 4.3 0 0 0 0-3.8s-1.2-.4-4 1.5a13.2 13.2 0 0 0-7 0c-2.8-1.9-4-1.5-4-1.5a4.3 4.3 0 0 0 0 3.8A5.2 5.2 0 0 0 3 12c0 5.2 3 6.4 6 6.76a4.8 4.8 0 0 0-1 3.24v4" />
+    <path d="M3 19s1 1 3 1 2-1 3-1" />
+  </svg>
+);
+
 export default function HexaRuntimePage() {
   return (
     <div className="min-h-screen bg-slate-950 pt-20">
@@ -54,9 +61,15 @@ export default function HexaRuntimePage() {
                   Hexa Runtime
                 </h1>
               </div>
-              <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-10">
+              <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-8">
                 Durable execution infrastructure for autonomous systems. Orchestration, routing, and observability built for reliability.
               </p>
+              <div className="flex items-center gap-4 mb-2">
+                <a href="https://github.com/exa-space/hexa-runtime" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium rounded-lg border border-slate-700 transition-colors">
+                  <GithubIcon className="w-4 h-4 mr-2" />
+                  View Source
+                </a>
+              </div>
             </section>
 
             {/* EXECUTIVE SUMMARY */}
