@@ -25,7 +25,6 @@ export default function DocsPage() {
 
   const currentPage = sectionSlug && pageSlug ? getDocPage(sectionSlug, pageSlug) : null;
   const currentSectionName = docsNavigation.find(s => s.slug === sectionSlug)?.title || 'Docs';
-  const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
   // If loading default or page not found
   if (!currentPage) {
@@ -113,7 +112,7 @@ export default function DocsPage() {
             
             <div className="mt-16 pt-8 border-t border-slate-800/80 flex items-center text-sm text-slate-500">
               <FileText className="w-4 h-4 mr-2 opacity-50" />
-              <span>Last updated: {currentDate}</span>
+              <span>Documentation Version v0.1</span>
             </div>
             
             {/* Simple Prev/Next Nav could go here */}

@@ -33,7 +33,27 @@ export const docsNavigation: DocSection[] = [
               <li><strong>Hexa Cognitive</strong>: The brain. Handles natural language intents, creates execution DAGs, manages autonomy sessions, and handles memory.</li>
               <li><strong>Hexa Runtime</strong>: The muscle. An asynchronous parallel executor that handles multi-agent DAGs with strict concurrency limits, circuit breakers, and state checkpointing.</li>
             </ul>
-            <p>By abstracting these two layers, INEXA ensures that planning logic is completely decoupled from execution, providing deterministic, reliable workflows over heterogeneous AI providers.</p>
+            <p className="mb-8">By abstracting these two layers, INEXA ensures that planning logic is completely decoupled from execution, providing deterministic, reliable workflows over heterogeneous AI providers.</p>
+
+            <h2 className="text-2xl font-semibold text-white mt-10 mb-6 border-b border-slate-800 pb-2">Quick Links</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <a href="/docs/architecture/full-stack-overview" className="block p-5 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all">
+                <h3 className="text-white font-medium mb-2">Full Stack Architecture &rarr;</h3>
+                <p className="text-sm text-slate-400">Understand the end-to-end integration of Cognitive and Runtime layers.</p>
+              </a>
+              <a href="/docs/runtime/dag-execution" className="block p-5 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all">
+                <h3 className="text-white font-medium mb-2">DAG Execution &rarr;</h3>
+                <p className="text-sm text-slate-400">Explore the asynchronous graph execution engine and semaphores.</p>
+              </a>
+              <a href="/docs/cognitive/adaptive-replanning" className="block p-5 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all">
+                <h3 className="text-white font-medium mb-2">Adaptive Replanning &rarr;</h3>
+                <p className="text-sm text-slate-400">Learn how the Cognitive layer patches failed graphs dynamically.</p>
+              </a>
+              <a href="/docs/deployment/self-hosted" className="block p-5 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all">
+                <h3 className="text-white font-medium mb-2">Deployment &rarr;</h3>
+                <p className="text-sm text-slate-400">View planned deployment targets including Kubernetes and Multi-Cloud.</p>
+              </a>
+            </div>
           </div>
         )
       },
@@ -340,7 +360,7 @@ export const docsNavigation: DocSection[] = [
     ]
   },
   {
-    title: 'Deployment',
+    title: 'Planned Deployment Targets',
     slug: 'deployment',
     pages: [
       {
