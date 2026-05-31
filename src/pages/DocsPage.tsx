@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight, Search, FileText } from 'lucide-react';
 import { docsNavigation, getDocPage } from '../data/docsData';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 export default function DocsPage() {
   const { sectionSlug, pageSlug } = useParams();
@@ -32,9 +30,7 @@ export default function DocsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col font-sans selection:bg-slate-500/30">
-      <Navbar />
-
+    <div className="min-h-screen bg-slate-950 flex flex-col font-sans selection:bg-slate-500/30 pt-20">
       {/* Top Breadcrumb Bar */}
       <div className="sticky top-20 z-30 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 h-12 flex items-center justify-between">
@@ -119,8 +115,6 @@ export default function DocsPage() {
           </div>
         </main>
       </div>
-      
-      <Footer />
     </div>
   );
 }
