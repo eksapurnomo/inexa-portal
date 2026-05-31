@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { 
-  ChevronRight, ArrowDown, CheckCircle2, 
+  ChevronRight, CheckCircle2, 
   Brain, AlertTriangle, Database, Target, Route
 } from 'lucide-react';
+import { HexaCognitiveDiagram } from '../components/diagrams/HexaCognitiveDiagram';
 
 const SidebarLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <a href={href} className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors">
@@ -154,54 +155,9 @@ export default function HexaCognitivePage() {
             <section id="cognitive-flow" className="py-16 border-b border-slate-800/50">
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Cognitive / Runtime Workflow</h2>
               
-              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm mx-auto overflow-x-auto">
-                <div className="flex flex-col items-center min-w-[500px]">
-                  
-                  {/* Dispatch Layer */}
-                  <div className="w-full flex justify-center mb-6">
-                    <div className="px-6 py-3 border border-slate-600 bg-slate-800 text-white rounded-lg text-center w-64 shadow-lg">
-                      <span className="text-xs text-slate-400 block mb-1">/cognitive/dispatch</span>
-                      Intent → DAG
-                    </div>
-                  </div>
-
-                  <ArrowDown className="w-5 h-5 text-slate-600 mb-6" />
-
-                  {/* Runtime Hand-off */}
-                  <div className="w-full flex justify-center mb-6">
-                    <div className="px-6 py-4 border border-indigo-500/50 bg-indigo-500/10 text-indigo-300 rounded-lg text-center w-64 border-dashed">
-                      Hexa Runtime Execution
-                    </div>
-                  </div>
-
-                  <ArrowDown className="w-5 h-5 text-slate-600 mb-6" />
-
-                  {/* Callback Layer */}
-                  <div className="w-full flex justify-center mb-8">
-                    <div className="px-6 py-3 border border-slate-600 bg-slate-800 text-white rounded-lg text-center w-64 shadow-lg">
-                      <span className="text-xs text-slate-400 block mb-1">/cognitive/callback</span>
-                      Evaluate Status
-                    </div>
-                  </div>
-
-                  {/* Branching */}
-                  <div className="w-full flex justify-between px-12 relative">
-                    <div className="absolute top-0 left-1/2 w-[calc(50%-3rem)] h-px bg-slate-700 -translate-x-full"></div>
-                    <div className="absolute top-0 right-1/2 w-[calc(50%-3rem)] h-px bg-slate-700"></div>
-                    
-                    <div className="absolute top-0 left-[3rem] w-px h-6 bg-slate-700"></div>
-                    <div className="absolute top-0 right-[3rem] w-px h-6 bg-slate-700"></div>
-
-                    <div className="mt-6 px-6 py-3 border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 rounded-lg text-center w-48">
-                      Success:<br/>Save Memory Lineage
-                    </div>
-                    
-                    <div className="mt-6 px-6 py-3 border border-amber-500/50 bg-amber-500/10 text-amber-400 rounded-lg text-center w-48">
-                      Failure:<br/>Adaptive Replanning
-                    </div>
-                  </div>
-
-                </div>
+              
+              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 mx-auto">
+                <HexaCognitiveDiagram />
               </div>
             </section>
 
@@ -216,7 +172,7 @@ export default function HexaCognitivePage() {
                   { name: 'Autonomy Manager', icon: Brain, desc: 'Enforces session bounds, budgeting, and execution limits.' },
                   { name: 'Memory Lineage', icon: Database, desc: 'PostgreSQL-backed ancestry tracker for semantic knowledge graphs.' }
                 ].map(comp => (
-                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:border-slate-700 transition-colors">
+                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-900/50 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.15)] hover:border-slate-700/80 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-3">
                       <comp.icon className="w-5 h-5 text-slate-400" />
                       <h3 className="text-white font-medium">{comp.name}</h3>

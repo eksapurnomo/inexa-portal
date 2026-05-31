@@ -3,6 +3,7 @@ import {
   ChevronRight, CheckCircle2, 
   Workflow, AlertTriangle, ShieldCheck, Clock, RotateCcw, Activity, Network
 } from 'lucide-react';
+import { HexaRuntimeDiagram } from '../components/diagrams/HexaRuntimeDiagram';
 
 const SidebarLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <a href={href} className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors">
@@ -166,77 +167,15 @@ export default function HexaRuntimePage() {
               </div>
             </section>
 
-            {/* DAG STATE MACHINE */}
+            {/* ARCHITECTURE DIAGRAM */}
             <section id="execution-flow" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">DAG Execution State Machine</h2>
-              
-              <div className="flex flex-col md:flex-row items-center justify-center p-12 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm gap-8 mx-auto">
-                <div className="px-6 py-4 border border-slate-700 bg-slate-800 text-white rounded-lg text-center shadow-lg">
-                  Pending
-                </div>
-                
-                <div className="flex md:flex-col items-center justify-center text-slate-500">
-                  <span className="text-xs mb-1 hidden md:block">Execute</span>
-                  <div className="h-0.5 w-12 md:w-16 bg-slate-700"></div>
-                </div>
-                
-                <div className="px-6 py-4 border border-indigo-500/50 bg-indigo-500/10 text-indigo-300 rounded-lg text-center shadow-[0_0_15px_rgba(99,102,241,0.1)]">
-                  Running
-                </div>
-                
-                <div className="flex md:flex-col items-center justify-center text-slate-500">
-                  <div className="h-0.5 w-12 md:w-16 bg-slate-700"></div>
-                </div>
-                
-                <div className="flex flex-col gap-4">
-                  <div className="px-6 py-3 border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 rounded-lg text-center">
-                    Completed
-                  </div>
-                  <div className="px-6 py-3 border border-red-500/30 bg-red-500/10 text-red-400 rounded-lg text-center">
-                    Failed
-                  </div>
-                  <div className="px-6 py-3 border border-slate-600 bg-slate-800/50 text-slate-400 rounded-lg text-center">
-                    Cancelled
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* CIRCUIT BREAKER */}
-            <section id="circuit-breaker" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">LLM Gateway & Circuit Breaker</h2>
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Execution Architecture</h2>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                The diagram below illustrates the flow from a cognitive DAG request through semaphore-limited execution, hybrid cache checking, telemetry writing, and the multi-provider LLM circuit breaker routing.
+              </p>
               
               <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/30">
-                <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                  LLM execution is mediated by a multi-provider gateway using `aiobreaker`. If a provider trips the circuit breaker due to timeouts or 5xx errors, traffic is automatically routed to fallback providers.
-                </p>
-
-                <div className="flex flex-col md:flex-row items-center justify-center font-mono text-xs gap-6">
-                  <div className="px-5 py-4 border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 rounded-lg text-center">
-                    <span className="block font-bold mb-1">Closed</span>
-                    <span className="text-[10px] opacity-70">Normal routing</span>
-                  </div>
-                  
-                  <div className="flex md:flex-col items-center justify-center text-slate-500">
-                    <span className="text-[10px] mb-1">Failures &gt;= MAX</span>
-                    <div className="h-0.5 w-12 bg-red-500/50"></div>
-                  </div>
-                  
-                  <div className="px-5 py-4 border border-red-500/50 bg-red-500/10 text-red-400 rounded-lg text-center">
-                    <span className="block font-bold mb-1">Open</span>
-                    <span className="text-[10px] opacity-70">Route to fallback</span>
-                  </div>
-                  
-                  <div className="flex md:flex-col items-center justify-center text-slate-500">
-                    <span className="text-[10px] mb-1">Timeout Expired</span>
-                    <div className="h-0.5 w-12 bg-amber-500/50"></div>
-                  </div>
-                  
-                  <div className="px-5 py-4 border border-amber-500/50 bg-amber-500/10 text-amber-400 rounded-lg text-center">
-                    <span className="block font-bold mb-1">Half-Open</span>
-                    <span className="text-[10px] opacity-70">Testing primary</span>
-                  </div>
-                </div>
+                <HexaRuntimeDiagram />
               </div>
             </section>
 
@@ -252,7 +191,7 @@ export default function HexaRuntimePage() {
                   { name: 'Qdrant Vector DB', icon: RotateCcw, desc: 'Houses tenant-isolated embeddings for semantic cache matching.' },
                   { name: 'Observability Stack', icon: Clock, desc: 'structlog for JSON logging, OpenTelemetry for traces, and Redis for durable cost tracking.' }
                 ].map(comp => (
-                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:border-slate-700 transition-colors">
+                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:bg-slate-900/50 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(16,185,129,0.15)] hover:border-slate-700/80 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-3">
                       <comp.icon className="w-5 h-5 text-slate-400" />
                       <h3 className="text-white font-medium">{comp.name}</h3>

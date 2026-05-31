@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { 
-  ChevronRight, ArrowDown, CheckCircle2, 
+  ChevronRight, CheckCircle2, 
   Brain, Workflow
 } from 'lucide-react';
+import { InexaStackDiagram } from '../components/diagrams/InexaStackDiagram';
 import {
   LogoOpenAI, LogoAnthropic, LogoGemini, LogoLlama, LogoGroq,
   LogoDeepSeek, LogoMistral, LogoCohere, LogoBytePlus, LogoxAI,
@@ -150,57 +151,8 @@ export default function ArchitecturePage() {
                 Applications integrate once, while the runtime manages provider diversity and infrastructure portability.
               </p>
 
-              <div className="flex flex-col items-center justify-center p-12 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm">
-                <div className="px-6 py-3 border border-slate-700 bg-slate-800 rounded-lg text-white mb-4 w-64 text-center">Applications</div>
-                <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
-                
-                <div className="px-6 py-3 border border-indigo-500/30 bg-indigo-900/20 rounded-lg text-indigo-300 mb-4 w-72 text-center shadow-[0_0_15px_rgba(99,102,241,0.1)]">
-                  <span className="block font-bold mb-2">Hexa Cognitive</span>
-                  <span className="text-[10px] opacity-70 block">Planning • Reflection • Adaptive Replanning</span>
-                  <span className="text-[10px] opacity-70 block">Memory Lineage • Autonomy Sessions</span>
-                </div>
-                <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
-                
-                <div className="px-6 py-3 border border-emerald-500/30 bg-emerald-900/20 rounded-lg text-emerald-300 mb-4 w-72 text-center shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-                  <span className="block font-bold mb-2">Hexa Runtime</span>
-                  <span className="text-[10px] opacity-70 block">DAG Executor • Provider Router • Circuit Breaker</span>
-                  <span className="text-[10px] opacity-70 block">Telemetry DLQ • Hybrid Cache</span>
-                </div>
-                <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
-                
-                <div className="flex flex-wrap justify-center items-center gap-3 mb-4 w-full max-w-2xl">
-                  {[
-                    { name: 'OpenAI', Logo: LogoOpenAI },
-                    { name: 'Anthropic', Logo: LogoAnthropic },
-                    { name: 'Gemini', Logo: LogoGemini },
-                    { name: 'Llama', Logo: LogoLlama }
-                  ].map(p => (
-                    <div key={p.name} className="flex flex-col items-center justify-center p-3 border border-dashed border-slate-600 bg-slate-900/50 rounded-lg text-slate-400 w-24 md:w-32">
-                      <p.Logo className="h-5 w-auto opacity-70 mb-2" />
-                      <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80">{p.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
-
-                <div className="flex flex-wrap justify-center items-center gap-3 mb-4 w-full max-w-2xl">
-                  {[
-                    { name: 'AWS', Logo: LogoAWS },
-                    { name: 'GCP', Logo: LogoGoogleCloud },
-                    { name: 'Azure', Logo: LogoAzure },
-                    { name: 'Alibaba', Logo: LogoAlibabaCloud }
-                  ].map(p => (
-                    <div key={p.name} className="flex flex-col items-center justify-center p-3 border border-dashed border-slate-600 bg-slate-900/50 rounded-lg text-slate-400 w-24 md:w-32">
-                      <p.Logo className="h-5 w-auto opacity-70 mb-2" />
-                      <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80">{p.name}</span>
-                    </div>
-                  ))}
-                </div>
-                <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
-                
-                <div className="px-6 py-3 border border-slate-700 bg-slate-950 rounded-lg text-slate-400 w-80 text-center">
-                  Compute / GPU / Network
-                </div>
+              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 mx-auto">
+                <InexaStackDiagram />
               </div>
             </section>
 
@@ -300,7 +252,7 @@ export default function ArchitecturePage() {
                   { title: 'OpenTelemetry', desc: 'Distributed tracing spans and metrics for observability across all provider hops.' },
                   { title: 'structlog', desc: 'Structured JSON logging for programmatic ingestion into SIEM and monitoring systems.' }
                 ].map(tech => (
-                  <div key={tech.title} className="p-6 border border-slate-800 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 transition-colors">
+                  <div key={tech.title} className="p-6 border border-slate-800 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.15)] hover:border-slate-700/80 transition-all duration-300">
                     <h3 className="text-white font-medium mb-2">{tech.title}</h3>
                     <p className="text-sm text-slate-400 leading-relaxed">{tech.desc}</p>
                   </div>

@@ -87,7 +87,7 @@ export default function ProductsOverviewPage() {
                 { title: 'Adaptive Replanning Architecture', icon: RotateCcw, desc: 'When execution fails, Hexa Cognitive parses the runtime error and dynamically patches the DAG up to 3 times before aborting.' },
                 { title: 'Vendor-Agnostic Deployment', icon: Workflow, desc: 'Completely uncoupled from specific cloud vendors or foundation models, allowing deployment across bare-metal, Vast.ai, AWS, or Azure.' }
               ].map(feature => (
-                <div key={feature.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20">
+                <div key={feature.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.15)] hover:border-slate-700/80 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-3 text-white">
                     <feature.icon className="w-5 h-5 text-slate-400" />
                     <h3 className="font-semibold text-sm">{feature.title}</h3>
