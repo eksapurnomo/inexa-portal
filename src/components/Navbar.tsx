@@ -29,10 +29,12 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link to="/products" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/products') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Products</Link>
             <Link to="/architecture" className={`text-sm font-medium transition-colors ${location.pathname === '/architecture' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Architecture</Link>
-            <a href={location.pathname === '/' ? '#products' : '/#products'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Products</a>
             <a href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
-            <a href={location.pathname === '/' ? '#research' : '/#research'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Research</a>
+            <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
+            <a href={location.pathname === '/' ? '#about' : '/#about'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+            <a href={location.pathname === '/' ? '#contact' : '/#contact'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
             <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
               <GithubIcon className="w-5 h-5" />
             </a>
@@ -61,6 +63,13 @@ export default function Navbar() {
           >
             <div className="px-4 pt-4 pb-6 flex flex-col space-y-4">
               <Link 
+                to="/products" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname.startsWith('/products') ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Products
+              </Link>
+              <Link 
                 to="/architecture" 
                 className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/architecture' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -68,25 +77,32 @@ export default function Navbar() {
                 Architecture
               </Link>
               <a 
-                href={location.pathname === '/' ? '#products' : '/#products'} 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Products
-              </a>
-              <a 
                 href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Ecosystem
               </a>
-              <a 
-                href={location.pathname === '/' ? '#research' : '/#research'} 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+              <Link 
+                to="/research" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/research' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Research
+              </Link>
+              <a 
+                href={location.pathname === '/' ? '#about' : '/#about'} 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href={location.pathname === '/' ? '#contact' : '/#contact'} 
+                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
               </a>
               <a 
                 href="https://github.com/eksapurnomo/inexa-ai" 

@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -37,8 +38,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Products</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#products" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</a></li>
-              <li><a href="#products" className="text-slate-400 hover:text-white transition-colors">Hexa Cognitive</a></li>
+              <li><Link to="/products/hexa-runtime" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</Link></li>
+              <li><Link to="/products/hexa-cognitive" className="text-slate-400 hover:text-white transition-colors">Hexa Cognitive</Link></li>
             </ul>
           </div>
 
@@ -56,7 +57,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#about" className="text-slate-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#research" className="text-slate-400 hover:text-white transition-colors">Research</a></li>
+              <li><Link to="/research" className="text-slate-400 hover:text-white transition-colors">Research</Link></li>
               <li><a href="mailto:eksa@inexa.space" className="text-slate-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>

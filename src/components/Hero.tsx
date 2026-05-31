@@ -33,12 +33,12 @@ export default function Hero() {
             <span className="tracking-wide">Global Intelligence Orchestration</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] font-semibold tracking-tighter text-white mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-semibold tracking-tight text-white mb-10">
             Infrastructure for{' '}
-            <span className="text-slate-300 block mt-2">Autonomous Intelligence.</span>
+            <span className="text-slate-300 block mt-3">Autonomous Intelligence</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed tracking-tight">
+          <p className="text-lg md:text-xl text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed tracking-tight">
             Build, orchestrate, and operate cognitive systems across providers, environments, and industries.
           </p>
 

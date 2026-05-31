@@ -3,6 +3,12 @@ import {
   ChevronRight, ArrowDown, CheckCircle2, 
   Brain, Workflow
 } from 'lucide-react';
+import {
+  LogoOpenAI, LogoAnthropic, LogoGemini, LogoLlama, LogoGroq,
+  LogoDeepSeek, LogoMistral, LogoCohere, LogoBytePlus, LogoxAI,
+  LogoAWS, LogoGoogleCloud, LogoAzure, LogoAlibabaCloud,
+  LogoVastai, LogoRunPod, LogoLambdaLabs
+} from '../components/ProviderLogos';
 
 const SidebarLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <a href={href} className="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors">
@@ -155,10 +161,34 @@ export default function ArchitecturePage() {
                 <div className="px-6 py-3 border border-slate-600 bg-slate-800/80 rounded-lg text-slate-200 mb-4 w-64 text-center">Hexa Runtime</div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
-                <div className="px-6 py-3 border border-dashed border-slate-500 bg-slate-900 rounded-lg text-slate-300 mb-4 w-72 text-center">AI Provider Layer</div>
+                <div className="flex flex-wrap justify-center items-center gap-3 mb-4 w-full max-w-2xl">
+                  {[
+                    { name: 'OpenAI', Logo: LogoOpenAI },
+                    { name: 'Anthropic', Logo: LogoAnthropic },
+                    { name: 'Gemini', Logo: LogoGemini },
+                    { name: 'Llama', Logo: LogoLlama }
+                  ].map(p => (
+                    <div key={p.name} className="flex flex-col items-center justify-center p-3 border border-dashed border-slate-600 bg-slate-900/50 rounded-lg text-slate-400 w-24 md:w-32">
+                      <p.Logo className="h-5 w-auto opacity-70 mb-2" />
+                      <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80">{p.name}</span>
+                    </div>
+                  ))}
+                </div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
 
-                <div className="px-6 py-3 border border-dashed border-slate-500 bg-slate-900 rounded-lg text-slate-300 mb-4 w-72 text-center">Infrastructure Provider Layer</div>
+                <div className="flex flex-wrap justify-center items-center gap-3 mb-4 w-full max-w-2xl">
+                  {[
+                    { name: 'AWS', Logo: LogoAWS },
+                    { name: 'GCP', Logo: LogoGoogleCloud },
+                    { name: 'Azure', Logo: LogoAzure },
+                    { name: 'Alibaba', Logo: LogoAlibabaCloud }
+                  ].map(p => (
+                    <div key={p.name} className="flex flex-col items-center justify-center p-3 border border-dashed border-slate-600 bg-slate-900/50 rounded-lg text-slate-400 w-24 md:w-32">
+                      <p.Logo className="h-5 w-auto opacity-70 mb-2" />
+                      <span className="text-[10px] uppercase tracking-wider font-semibold opacity-80">{p.name}</span>
+                    </div>
+                  ))}
+                </div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
                 <div className="px-6 py-3 border border-slate-700 bg-slate-950 rounded-lg text-slate-400 w-80 text-center">
@@ -175,11 +205,27 @@ export default function ArchitecturePage() {
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {['OpenAI', 'Anthropic', 'Gemini', 'Llama', 'Groq', 'DeepSeek', 'Mistral', 'Cohere', 'BytePlus', 'xAI'].map(provider => (
-                  <div key={provider} className="flex items-center justify-center p-4 border border-slate-800 rounded-lg bg-slate-900/30 text-slate-400 hover:text-white hover:border-slate-600 transition-colors font-medium tracking-tight select-none">
-                    {provider}
-                  </div>
-                ))}
+                {[
+                  { name: 'OpenAI', desc: 'Foundation Models', Logo: LogoOpenAI },
+                  { name: 'Anthropic', desc: 'Safety-First AI', Logo: LogoAnthropic },
+                  { name: 'Gemini', desc: 'Multimodal Intelligence', Logo: LogoGemini },
+                  { name: 'Llama', desc: 'Open Model Ecosystem', Logo: LogoLlama },
+                  { name: 'Groq', desc: 'Inference Acceleration', Logo: LogoGroq },
+                  { name: 'DeepSeek', desc: 'Advanced Reasoning', Logo: LogoDeepSeek },
+                  { name: 'Mistral', desc: 'Open Foundation Models', Logo: LogoMistral },
+                  { name: 'Cohere', desc: 'Enterprise Language AI', Logo: LogoCohere },
+                  { name: 'BytePlus', desc: 'AI Infrastructure', Logo: LogoBytePlus },
+                  { name: 'xAI', desc: 'Frontier Intelligence', Logo: LogoxAI }
+                ].map(provider => {
+                  const Logo = provider.Logo;
+                  return (
+                    <div key={provider.name} className="flex flex-col items-center justify-center p-6 border border-slate-800/60 rounded-xl bg-slate-900/30 hover:bg-slate-800/30 text-slate-500 hover:text-slate-200 hover:border-slate-700 transition-all duration-300 cursor-default select-none group text-center">
+                      <Logo className="h-9 md:h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity mb-4 drop-shadow-sm" />
+                      <span className="text-xs font-medium tracking-tight opacity-90 group-hover:opacity-100 transition-opacity mb-1">{provider.name}</span>
+                      <span className="text-[10px] opacity-50 font-medium tracking-wide uppercase transition-opacity">{provider.desc}</span>
+                    </div>
+                  );
+                })}
               </div>
             </section>
 
@@ -194,22 +240,41 @@ export default function ArchitecturePage() {
                 <div>
                   <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4">Cloud Providers</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {['AWS', 'Google Cloud', 'Alibaba Cloud', 'Microsoft Azure'].map(provider => (
-                      <div key={provider} className="flex items-center justify-center p-4 border border-slate-800 rounded-lg bg-slate-900/30 text-slate-400 font-medium text-sm tracking-tight">
-                        {provider}
-                      </div>
-                    ))}
+                    {[
+                      { name: 'AWS', desc: 'Cloud Infrastructure', Logo: LogoAWS },
+                      { name: 'Google Cloud', desc: 'Cloud Platform', Logo: LogoGoogleCloud },
+                      { name: 'Microsoft Azure', desc: 'Enterprise Cloud', Logo: LogoAzure },
+                      { name: 'Alibaba Cloud', desc: 'Global Cloud Services', Logo: LogoAlibabaCloud }
+                    ].map(provider => {
+                      const Logo = provider.Logo;
+                      return (
+                        <div key={provider.name} className="flex flex-col items-center justify-center p-6 border border-slate-800/60 rounded-xl bg-slate-900/30 hover:bg-slate-800/30 text-slate-500 hover:text-slate-200 hover:border-slate-700 transition-all duration-300 cursor-default select-none group text-center">
+                          <Logo className="h-9 md:h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity mb-4 drop-shadow-sm" />
+                          <span className="text-xs font-medium tracking-tight opacity-90 group-hover:opacity-100 transition-opacity mb-1">{provider.name}</span>
+                          <span className="text-[10px] opacity-50 font-medium tracking-wide uppercase transition-opacity">{provider.desc}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div>
                   <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4">Compute Providers</h4>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {['Vast.ai', 'Lambda', 'RunPod'].map(provider => (
-                      <div key={provider} className="flex items-center justify-center p-4 border border-slate-800 rounded-lg bg-slate-900/30 text-slate-400 font-medium text-sm tracking-tight">
-                        {provider}
-                      </div>
-                    ))}
+                    {[
+                      { name: 'Vast.ai', desc: 'Distributed GPU Compute', Logo: LogoVastai },
+                      { name: 'RunPod', desc: 'GPU Execution Platform', Logo: LogoRunPod },
+                      { name: 'Lambda Labs', desc: 'AI Compute Infrastructure', Logo: LogoLambdaLabs }
+                    ].map(provider => {
+                      const Logo = provider.Logo;
+                      return (
+                        <div key={provider.name} className="flex flex-col items-center justify-center p-6 border border-slate-800/60 rounded-xl bg-slate-900/30 hover:bg-slate-800/30 text-slate-500 hover:text-slate-200 hover:border-slate-700 transition-all duration-300 cursor-default select-none group text-center">
+                          <Logo className="h-9 md:h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity mb-4 drop-shadow-sm" />
+                          <span className="text-xs font-medium tracking-tight opacity-90 group-hover:opacity-100 transition-opacity mb-1">{provider.name}</span>
+                          <span className="text-[10px] opacity-50 font-medium tracking-wide uppercase transition-opacity">{provider.desc}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
