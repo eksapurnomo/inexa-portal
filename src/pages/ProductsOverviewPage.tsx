@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Brain, Workflow } from 'lucide-react';
+import { ChevronRight, ArrowRight, Brain, Workflow, ShieldCheck, Route, Database, RotateCcw, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ProductsOverviewPage() {
@@ -24,7 +24,7 @@ export default function ProductsOverviewPage() {
             </p>
           </section>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-24">
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export default function ProductsOverviewPage() {
                 
                 <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Hexa Cognitive</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                  Planning, reasoning, memory, reflection, and coordination infrastructure for autonomous intelligence.
+                  Cognitive infrastructure for autonomous intelligence. Planning, adaptive replanning, and safe memory persistence.
                 </p>
                 
                 <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-wider">
@@ -61,7 +61,7 @@ export default function ProductsOverviewPage() {
                 
                 <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Hexa Runtime</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                  Durable orchestration, execution, routing, replay, and observability infrastructure for intelligent systems.
+                  Durable execution infrastructure for autonomous systems. Orchestration, routing, and observability built for reliability.
                 </p>
                 
                 <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-wider">
@@ -71,6 +71,33 @@ export default function ProductsOverviewPage() {
             </motion.div>
 
           </div>
+
+          {/* WHY INEXA */}
+          <section className="pt-16 border-t border-slate-800/50">
+            <h2 className="text-3xl font-semibold tracking-tighter text-white mb-10">
+              Why INEXA
+            </h2>
+            
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { title: 'Runtime-Confirmed Memory Persistence', icon: ShieldCheck, desc: 'Memory is safely persisted to PostgreSQL only after the Runtime confirms a successful execution callback, preventing hallucination poisoning.' },
+                { title: 'Multi-Provider Failover Execution', icon: Route, desc: 'LLM Gateway uses circuit breakers (`aiobreaker`). If a provider hits timeouts or 5xx limits, traffic routes to fallback providers instantly.' },
+                { title: 'Hybrid Exact + Semantic Cache', icon: Database, desc: 'Combines Redis for exact SHA-256 hash caching with Qdrant for semantic vector matching, drastically reducing token waste.' },
+                { title: 'Durable Telemetry Pipeline', icon: Activity, desc: 'Sub-cent token tracking is pushed to a Redis Dead-Letter Queue (DLQ), ensuring observability failures never crash the main loop.' },
+                { title: 'Adaptive Replanning Architecture', icon: RotateCcw, desc: 'When execution fails, Hexa Cognitive parses the runtime error and dynamically patches the DAG up to 3 times before aborting.' },
+                { title: 'Vendor-Agnostic Deployment', icon: Workflow, desc: 'Completely uncoupled from specific cloud vendors or foundation models, allowing deployment across bare-metal, Vast.ai, AWS, or Azure.' }
+              ].map(feature => (
+                <div key={feature.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20">
+                  <div className="flex items-center gap-3 mb-3 text-white">
+                    <feature.icon className="w-5 h-5 text-slate-400" />
+                    <h3 className="font-semibold text-sm">{feature.title}</h3>
+                  </div>
+                  <p className="text-sm text-slate-400 leading-relaxed">{feature.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
         </main>
 
       </div>

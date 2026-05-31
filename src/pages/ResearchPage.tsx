@@ -3,24 +3,24 @@ import { ChevronRight, FileText, FlaskConical, Clock } from 'lucide-react';
 
 const roadmapItems = [
   {
-    title: 'Durable Execution for Autonomous Systems',
-    description: 'Investigating novel checkpointing mechanisms for stateful LLM operations that survive complete infrastructure failure.',
+    title: 'Dynamic DAG Generation',
+    description: 'Investigating AI-driven workflows where the execution graph is generated and optimized on the fly based on runtime context.',
   },
   {
-    title: 'Cognitive Memory Architecture',
-    description: 'Designing graph-based memory structures that allow agents to reason over episodic history without context window limits.',
+    title: 'Durable Step Execution Persistence',
+    description: 'Exploring Event Sourcing patterns to replace state mutation with an immutable append-only log of execution steps.',
   },
   {
-    title: 'Provider-Agnostic AI Infrastructure',
-    description: 'Standardizing unified orchestration patterns to seamlessly route requests across heterogeneous LLM providers.',
+    title: 'Dense/Sparse Hybrid Vector Search',
+    description: 'Enhancing the Qdrant semantic cache layer with BM25 sparse vectors to improve exact-match recall in highly technical contexts.',
   },
   {
-    title: 'Multi-Agent Coordination Patterns',
-    description: 'Exploring consensus algorithms and negotiation protocols for independent autonomous agents operating in shared environments.',
+    title: 'Verified Memory Persistence',
+    description: 'Formal verification of memory lineage to ensure cognitive poisoning cannot propagate across autonomous session boundaries.',
   },
   {
-    title: 'Autonomous Operations Design',
-    description: 'Frameworks for human-in-the-loop oversight in systems that operate autonomously for extended temporal horizons.',
+    title: 'Autonomous Operations Reliability',
+    description: 'Frameworks for livelock detection and programmatic budget exhaustion in unbounded autonomous agent loops.',
   }
 ];
 
@@ -58,7 +58,7 @@ export default function ResearchPage() {
               <FlaskConical className="w-10 h-10 text-slate-600 mb-4 opacity-50" />
               <h3 className="text-lg font-medium text-slate-300 mb-2">Research publications coming soon</h3>
               <p className="text-slate-500 text-sm max-w-md">
-                Our team is currently preparing our foundational papers on durable execution and cognitive orchestration. Check back later for updates.
+                Our team is currently preparing foundational papers based on our architecture audit. Check back later for updates.
               </p>
             </div>
           </section>

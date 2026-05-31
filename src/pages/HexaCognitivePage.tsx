@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { 
   ChevronRight, ArrowDown, CheckCircle2, 
-  Brain, AlertTriangle, Lightbulb, Database, Users, Target
+  Brain, AlertTriangle, Database, Target, Route
 } from 'lucide-react';
 
 const SidebarLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
@@ -36,7 +36,6 @@ export default function HexaCognitivePage() {
               <SidebarLink href="#capabilities">Core Capabilities</SidebarLink>
               <SidebarLink href="#cognitive-flow">Cognitive Flow</SidebarLink>
               <SidebarLink href="#components">Architecture Components</SidebarLink>
-              <SidebarLink href="#roadmap">Future Roadmap</SidebarLink>
             </div>
           </aside>
 
@@ -54,7 +53,7 @@ export default function HexaCognitivePage() {
                 </h1>
               </div>
               <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-10">
-                Planning, reasoning, memory, reflection, and coordination infrastructure for autonomous intelligence.
+                Cognitive infrastructure for autonomous intelligence. Planning, adaptive replanning, and safe memory persistence.
               </p>
             </section>
 
@@ -63,10 +62,10 @@ export default function HexaCognitivePage() {
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-6">Executive Summary</h2>
               <div className="prose prose-invert max-w-none text-slate-400">
                 <p className="mb-4 leading-relaxed">
-                  Hexa Cognitive provides the intelligence architecture required for autonomous systems to plan, act, and remember. While foundation models provide raw reasoning, Hexa Cognitive provides the structured framework to turn reasoning into reliable multi-step decisions.
+                  Hexa Cognitive is a dedicated microservice operating above the runtime layer. It is responsible for higher-order intelligence tasks: transforming natural language intents into executable DAGs, managing cognitive checkpoints, persisting semantic memory, and orchestrating self-correction.
                 </p>
                 <p className="leading-relaxed">
-                  It takes responsibility for context persistence, self-correction, and breaking down complex user goals into actionable plans that can be handed off to Hexa Runtime for execution.
+                  It acts as the brain that directs the Hexa Runtime muscles. By strictly isolating cognitive logic from execution physics, it enables complex autonomous session management, strict budgeting, and safe memory lineage.
                 </p>
               </div>
             </section>
@@ -80,11 +79,10 @@ export default function HexaCognitivePage() {
               
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { title: 'Limited Reasoning', desc: 'Models struggle to maintain logical consistency across very long contexts.' },
-                  { title: 'No Long-Term Memory', desc: 'Critical user context and past decisions are lost between sessions.' },
-                  { title: 'Weak Planning', desc: 'Inability to reliably break down complex, multi-day objectives.' },
-                  { title: 'Fragmented Context', desc: 'Data scattered across disparate systems cannot be synthesized.' },
-                  { title: 'Inconsistent Decision-Making', desc: 'Lack of reflection mechanisms leads to uncorrected errors.' }
+                  { title: 'Hallucination Poisoning', desc: 'Saving failed thoughts corrupts future memory. Storage must be deferred until runtime success.' },
+                  { title: 'Execution Brittleness', desc: 'Workflows fail when real-world APIs change. Adaptive replanning is required.' },
+                  { title: 'Runaway Loops', desc: 'Autonomous agents can burn infinite budgets without strict session management.' },
+                  { title: 'Redundant Planning', desc: 'Re-planning identical intents wastes tokens. Deterministic replay caching is needed.' }
                 ].map(problem => (
                   <div key={problem.title} className="p-5 border border-slate-800/60 rounded-xl bg-slate-900/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-slate-500 flex-shrink-0" />
@@ -106,29 +104,22 @@ export default function HexaCognitivePage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Planning</h4>
-                      <p className="text-slate-500 text-xs mt-1">Hierarchical decomposition of high-level goals into sub-tasks.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Adaptive Replanning</h4>
+                      <p className="text-slate-500 text-xs mt-1">Dynamically patches failed DAG nodes using runtime error contexts, supporting up to 3 self-correction iterations.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Reasoning</h4>
-                      <p className="text-slate-500 text-xs mt-1">Multi-step logic evaluation and probability assessment.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Autonomy Sessions</h4>
+                      <p className="text-slate-500 text-xs mt-1">Tracks execution budgets and limits (max_iterations, max_runtime_seconds) with endpoints to pause or terminate.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Reflection</h4>
-                      <p className="text-slate-500 text-xs mt-1">Critique and self-evaluation of proposed plans before action.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
-                    <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Memory</h4>
-                      <p className="text-slate-500 text-xs mt-1">Episodic and semantic storage of past interactions.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Safe Memory Persistence</h4>
+                      <p className="text-slate-500 text-xs mt-1">Memory is strictly saved only after Hexa Runtime confirms a successful execution callback.</p>
                     </div>
                   </div>
                 </div>
@@ -137,22 +128,22 @@ export default function HexaCognitivePage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Context Persistence</h4>
-                      <p className="text-slate-500 text-xs mt-1">Durable state that survives across individual LLM calls.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Memory Lineage</h4>
+                      <p className="text-slate-500 text-xs mt-1">Persists semantic memory in PostgreSQL, tracing up to 10 hops of parent-child ancestry chains.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Agent Coordination</h4>
-                      <p className="text-slate-500 text-xs mt-1">Synchronizing context between specialized sub-agents.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Replay Cache</h4>
+                      <p className="text-slate-500 text-xs mt-1">Uses deterministic hashing to check for previously generated plans and avoid redundant planning.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Self-Correction</h4>
-                      <p className="text-slate-500 text-xs mt-1">Dynamic replanning when encountering execution failures.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Cognitive Checkpoints</h4>
+                      <p className="text-slate-500 text-xs mt-1">Tracks planner state, autonomy state, memory references, and plan versions throughout the lifecycle.</p>
                     </div>
                   </div>
                 </div>
@@ -161,62 +152,76 @@ export default function HexaCognitivePage() {
 
             {/* COGNITIVE FLOW */}
             <section id="cognitive-flow" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Cognitive Flow</h2>
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Cognitive / Runtime Workflow</h2>
               
-              <div className="flex flex-col items-center justify-center p-12 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm max-w-2xl mx-auto">
-                {['Goal', 'Planning', 'Reasoning', 'Memory', 'Reflection', 'Decision', 'Runtime Execution'].map((step, idx, arr) => (
-                  <div key={step} className="flex flex-col items-center w-full">
-                    <div className={`px-6 py-3 border rounded-lg text-center w-64 ${
-                      idx === arr.length - 1 ? 'border-cyan-700 bg-cyan-900/30 text-cyan-400' : 
-                      idx === 0 ? 'border-slate-700 bg-slate-800 text-white' : 
-                      'border-slate-600 bg-slate-900/50 text-slate-300'
-                    }`}>
-                      {step}
+              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm mx-auto overflow-x-auto">
+                <div className="flex flex-col items-center min-w-[500px]">
+                  
+                  {/* Dispatch Layer */}
+                  <div className="w-full flex justify-center mb-6">
+                    <div className="px-6 py-3 border border-slate-600 bg-slate-800 text-white rounded-lg text-center w-64 shadow-lg">
+                      <span className="text-xs text-slate-400 block mb-1">/cognitive/dispatch</span>
+                      Intent → DAG
                     </div>
-                    {idx < arr.length - 1 && (
-                      <ArrowDown className="w-5 h-5 text-slate-600 my-3" />
-                    )}
                   </div>
-                ))}
+
+                  <ArrowDown className="w-5 h-5 text-slate-600 mb-6" />
+
+                  {/* Runtime Hand-off */}
+                  <div className="w-full flex justify-center mb-6">
+                    <div className="px-6 py-4 border border-indigo-500/50 bg-indigo-500/10 text-indigo-300 rounded-lg text-center w-64 border-dashed">
+                      Hexa Runtime Execution
+                    </div>
+                  </div>
+
+                  <ArrowDown className="w-5 h-5 text-slate-600 mb-6" />
+
+                  {/* Callback Layer */}
+                  <div className="w-full flex justify-center mb-8">
+                    <div className="px-6 py-3 border border-slate-600 bg-slate-800 text-white rounded-lg text-center w-64 shadow-lg">
+                      <span className="text-xs text-slate-400 block mb-1">/cognitive/callback</span>
+                      Evaluate Status
+                    </div>
+                  </div>
+
+                  {/* Branching */}
+                  <div className="w-full flex justify-between px-12 relative">
+                    <div className="absolute top-0 left-1/2 w-[calc(50%-3rem)] h-px bg-slate-700 -translate-x-full"></div>
+                    <div className="absolute top-0 right-1/2 w-[calc(50%-3rem)] h-px bg-slate-700"></div>
+                    
+                    <div className="absolute top-0 left-[3rem] w-px h-6 bg-slate-700"></div>
+                    <div className="absolute top-0 right-[3rem] w-px h-6 bg-slate-700"></div>
+
+                    <div className="mt-6 px-6 py-3 border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 rounded-lg text-center w-48">
+                      Success:<br/>Save Memory Lineage
+                    </div>
+                    
+                    <div className="mt-6 px-6 py-3 border border-amber-500/50 bg-amber-500/10 text-amber-400 rounded-lg text-center w-48">
+                      Failure:<br/>Adaptive Replanning
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </section>
 
             {/* ARCHITECTURE COMPONENTS */}
-            <section id="components" className="py-16 border-b border-slate-800/50">
+            <section id="components" className="py-16">
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Architecture Components</h2>
               
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { name: 'Planner', icon: Target, desc: 'Generates step-by-step resolution graphs for complex user requests.' },
-                  { name: 'Reasoning Engine', icon: Lightbulb, desc: 'Evaluates logical consistency and context relevance.' },
-                  { name: 'Memory Layer', icon: Database, desc: 'Vector and graph databases for semantic and episodic recall.' },
-                  { name: 'Reflection Layer', icon: Brain, desc: 'Self-critique modules that analyze outputs prior to execution.' },
-                  { name: 'Coordination Layer', icon: Users, desc: 'Manages handoffs between specialized cognitive agents.' }
+                  { name: 'LLM Planner', icon: Target, desc: 'Generates execution DAGs from user intents while checking replay caches.' },
+                  { name: 'Replay Cache', icon: Route, desc: 'Avoids redundant planning using deterministic hashes of inputs.' },
+                  { name: 'Autonomy Manager', icon: Brain, desc: 'Enforces session bounds, budgeting, and execution limits.' },
+                  { name: 'Memory Lineage', icon: Database, desc: 'PostgreSQL-backed ancestry tracker for semantic knowledge graphs.' }
                 ].map(comp => (
-                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
+                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:border-slate-700 transition-colors">
                     <div className="flex items-center gap-3 mb-3">
                       <comp.icon className="w-5 h-5 text-slate-400" />
                       <h3 className="text-white font-medium">{comp.name}</h3>
                     </div>
                     <p className="text-sm text-slate-500 leading-relaxed">{comp.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* FUTURE ROADMAP */}
-            <section id="roadmap" className="py-16">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Future Roadmap</h2>
-              
-              <div className="flex flex-wrap gap-4">
-                {[
-                  'Cognitive Memory Fabric',
-                  'Multi-Agent Coordination',
-                  'Distributed Intelligence',
-                  'Autonomous Decision Systems'
-                ].map(item => (
-                  <div key={item} className="px-5 py-3 border border-slate-800 rounded-full bg-slate-900/20 text-slate-400 text-sm font-medium tracking-tight">
-                    {item}
                   </div>
                 ))}
               </div>

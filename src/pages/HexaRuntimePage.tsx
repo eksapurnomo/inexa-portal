@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { 
-  ChevronRight, ArrowDown, CheckCircle2, 
-  Workflow, AlertTriangle, ShieldCheck, Clock, Route, RotateCcw, Activity
+  ChevronRight, CheckCircle2, 
+  Workflow, AlertTriangle, ShieldCheck, Clock, RotateCcw, Activity, Network
 } from 'lucide-react';
 
 const SidebarLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
@@ -54,7 +54,7 @@ export default function HexaRuntimePage() {
                 </h1>
               </div>
               <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-10">
-                Durable orchestration, execution, routing, replay, and observability infrastructure for intelligent systems.
+                Durable execution infrastructure for autonomous systems. Orchestration, routing, and observability built for reliability.
               </p>
             </section>
 
@@ -63,10 +63,10 @@ export default function HexaRuntimePage() {
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-6">Executive Summary</h2>
               <div className="prose prose-invert max-w-none text-slate-400">
                 <p className="mb-4 leading-relaxed">
-                  Hexa Runtime is the foundational execution layer of the INEXA platform. It strictly separates intelligence (decisions) from execution (actions), ensuring that complex, long-running processes remain durable, observable, and resilient to failure.
+                  Hexa Runtime is a high-performance, asynchronous AI runtime engine designed for executing multi-agent workflows structured as Directed Acyclic Graphs (DAGs). It is built with production durability, resilience, security, and strict token/cost efficiency in mind.
                 </p>
                 <p className="leading-relaxed">
-                  While the cognitive layer dictates <em>what</em> needs to happen, Hexa Runtime dictates <em>how</em> it happens—managing retries, provider routing, checkpointing, and state persistence.
+                  It rigorously separates orchestration and execution from intelligence. While Hexa Cognitive handles the <em>"what"</em>, Hexa Runtime governs the <em>"how"</em>—managing semaphore-based concurrency, circuit breakers, hybrid caching, and telemetry dead-letter queues.
                 </p>
               </div>
             </section>
@@ -80,11 +80,11 @@ export default function HexaRuntimePage() {
               
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { title: 'Workflow Failures', desc: 'Long-running tasks fail mid-execution without a way to resume.' },
-                  { title: 'Provider Instability', desc: 'API timeouts, rate limits, and outages disrupt operations.' },
-                  { title: 'Execution Interruptions', desc: 'Process crashes lead to complete data and progress loss.' },
-                  { title: 'Context Loss', desc: 'State is dropped between complex multi-step reasoning chains.' },
-                  { title: 'Retry Complexity', desc: 'Custom exponential backoff and routing logic is difficult to scale.' }
+                  { title: 'Provider Instability', desc: 'LLM APIs suffer from rate limits and outages. Circuit breakers are required.' },
+                  { title: 'Workflow Failures', desc: 'Long-running tasks fail mid-execution without durable checkpointing to resume.' },
+                  { title: 'Token Waste', desc: 'Redundant LLM queries burn budget. Exact and semantic caching is missing.' },
+                  { title: 'Process Exhaustion', desc: 'Unbounded concurrency causes connection pool exhaustion and livelocks.' },
+                  { title: 'Observability Loss', desc: 'Telemetry failures crash the main execution loop if not properly buffered.' }
                 ].map(problem => (
                   <div key={problem.title} className="p-5 border border-slate-800/60 rounded-xl bg-slate-900/20 flex gap-4">
                     <AlertTriangle className="w-5 h-5 text-slate-500 flex-shrink-0" />
@@ -106,29 +106,29 @@ export default function HexaRuntimePage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Workflow Orchestration</h4>
-                      <p className="text-slate-500 text-xs mt-1">Coordinate complex, multi-step processes reliably.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Fail-Safe LLM Gateway</h4>
+                      <p className="text-slate-500 text-xs mt-1">Wraps providers in circuit breakers (`aiobreaker`). Routes to fallback models automatically on failure.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">DAG Execution</h4>
-                      <p className="text-slate-500 text-xs mt-1">Execute tasks via Directed Acyclic Graphs for parallelism.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Async DAG Executor</h4>
+                      <p className="text-slate-500 text-xs mt-1">Dependency-aware resolution with semaphores limiting maximum concurrent nodes to prevent starvation.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Scheduling</h4>
-                      <p className="text-slate-500 text-xs mt-1">Time-based and event-driven trigger mechanisms.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Durable Checkpointing</h4>
+                      <p className="text-slate-500 text-xs mt-1">State is serialized and written to Redis/MySQL after every single node completion.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Routing</h4>
-                      <p className="text-slate-500 text-xs mt-1">Dynamic payload routing to optimal AI providers.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Resilient Retries</h4>
+                      <p className="text-slate-500 text-xs mt-1">Automated exponential retries with jitter and cumulative wall-clock limits.</p>
                     </div>
                   </div>
                 </div>
@@ -137,69 +137,122 @@ export default function HexaRuntimePage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Checkpointing</h4>
-                      <p className="text-slate-500 text-xs mt-1">Persist execution state at every critical juncture.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Hybrid Response Caching</h4>
+                      <p className="text-slate-500 text-xs mt-1">Exact key-value caching (Redis) paired with semantic matching (Qdrant) minimizes token consumption.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Replay</h4>
-                      <p className="text-slate-500 text-xs mt-1">Resume execution from the exact point of failure.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Durable Telemetry</h4>
+                      <p className="text-slate-500 text-xs mt-1">Captures sub-cent token counts safely using Redis hashes and Dead-Letter Queues (DLQ).</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Retry Management</h4>
-                      <p className="text-slate-500 text-xs mt-1">Intelligent backoff and jitter for transient errors.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">OpenTelemetry Instrumentation</h4>
+                      <p className="text-slate-500 text-xs mt-1">Rich tracing spans mapping workflows, individual node executions, and backend API hops.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-slate-600 mt-0.5" />
                     <div>
-                      <h4 className="text-slate-200 font-medium text-sm">Observability</h4>
-                      <p className="text-slate-500 text-xs mt-1">Complete telemetry and logging of all execution states.</p>
+                      <h4 className="text-slate-200 font-medium text-sm">Graceful Shutdown</h4>
+                      <p className="text-slate-500 text-xs mt-1">Intercepts SIGTERM signals to cancel running tasks cleanly and save outstanding state.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
 
-            {/* EXECUTION FLOW */}
+            {/* DAG STATE MACHINE */}
             <section id="execution-flow" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Execution Flow</h2>
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">DAG Execution State Machine</h2>
               
-              <div className="flex flex-col items-center justify-center p-12 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm max-w-2xl mx-auto">
-                {['Request', 'Workflow', 'Runtime Engine', 'Provider Router', 'Execution', 'Checkpoint', 'Replay'].map((step, idx, arr) => (
-                  <div key={step} className="flex flex-col items-center w-full">
-                    <div className={`px-6 py-3 border rounded-lg text-center w-64 ${
-                      idx === 0 || idx === arr.length - 1 ? 'border-slate-700 bg-slate-800 text-white' : 
-                      'border-slate-600 bg-slate-900/50 text-slate-300'
-                    }`}>
-                      {step}
-                    </div>
-                    {idx < arr.length - 1 && (
-                      <ArrowDown className="w-5 h-5 text-slate-600 my-3" />
-                    )}
+              <div className="flex flex-col md:flex-row items-center justify-center p-12 border border-slate-800 rounded-xl bg-slate-900/20 font-mono text-sm gap-8 mx-auto">
+                <div className="px-6 py-4 border border-slate-700 bg-slate-800 text-white rounded-lg text-center shadow-lg">
+                  Pending
+                </div>
+                
+                <div className="flex md:flex-col items-center justify-center text-slate-500">
+                  <span className="text-xs mb-1 hidden md:block">Execute</span>
+                  <div className="h-0.5 w-12 md:w-16 bg-slate-700"></div>
+                </div>
+                
+                <div className="px-6 py-4 border border-indigo-500/50 bg-indigo-500/10 text-indigo-300 rounded-lg text-center shadow-[0_0_15px_rgba(99,102,241,0.1)]">
+                  Running
+                </div>
+                
+                <div className="flex md:flex-col items-center justify-center text-slate-500">
+                  <div className="h-0.5 w-12 md:w-16 bg-slate-700"></div>
+                </div>
+                
+                <div className="flex flex-col gap-4">
+                  <div className="px-6 py-3 border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 rounded-lg text-center">
+                    Completed
                   </div>
-                ))}
+                  <div className="px-6 py-3 border border-red-500/30 bg-red-500/10 text-red-400 rounded-lg text-center">
+                    Failed
+                  </div>
+                  <div className="px-6 py-3 border border-slate-600 bg-slate-800/50 text-slate-400 rounded-lg text-center">
+                    Cancelled
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* CIRCUIT BREAKER */}
+            <section id="circuit-breaker" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">LLM Gateway & Circuit Breaker</h2>
+              
+              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/30">
+                <p className="text-slate-400 text-sm leading-relaxed mb-8">
+                  LLM execution is mediated by a multi-provider gateway using `aiobreaker`. If a provider trips the circuit breaker due to timeouts or 5xx errors, traffic is automatically routed to fallback providers.
+                </p>
+
+                <div className="flex flex-col md:flex-row items-center justify-center font-mono text-xs gap-6">
+                  <div className="px-5 py-4 border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 rounded-lg text-center">
+                    <span className="block font-bold mb-1">Closed</span>
+                    <span className="text-[10px] opacity-70">Normal routing</span>
+                  </div>
+                  
+                  <div className="flex md:flex-col items-center justify-center text-slate-500">
+                    <span className="text-[10px] mb-1">Failures &gt;= MAX</span>
+                    <div className="h-0.5 w-12 bg-red-500/50"></div>
+                  </div>
+                  
+                  <div className="px-5 py-4 border border-red-500/50 bg-red-500/10 text-red-400 rounded-lg text-center">
+                    <span className="block font-bold mb-1">Open</span>
+                    <span className="text-[10px] opacity-70">Route to fallback</span>
+                  </div>
+                  
+                  <div className="flex md:flex-col items-center justify-center text-slate-500">
+                    <span className="text-[10px] mb-1">Timeout Expired</span>
+                    <div className="h-0.5 w-12 bg-amber-500/50"></div>
+                  </div>
+                  
+                  <div className="px-5 py-4 border border-amber-500/50 bg-amber-500/10 text-amber-400 rounded-lg text-center">
+                    <span className="block font-bold mb-1">Half-Open</span>
+                    <span className="text-[10px] opacity-70">Testing primary</span>
+                  </div>
+                </div>
               </div>
             </section>
 
             {/* ARCHITECTURE COMPONENTS */}
             <section id="components" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Architecture Components</h2>
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Stack Components</h2>
               
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { name: 'Runtime Engine', icon: Activity, desc: 'The core execution loop managing task lifecycle and concurrency.' },
-                  { name: 'Execution Router', icon: Route, desc: 'Directs workloads to appropriate AI models or compute resources.' },
-                  { name: 'State Manager', icon: ShieldCheck, desc: 'Maintains strict consistency of workflow states across nodes.' },
-                  { name: 'Checkpoint Layer', icon: RotateCcw, desc: 'Serializes memory and execution state to durable storage.' },
-                  { name: 'Observability Layer', icon: Clock, desc: 'Aggregates metrics, traces, and structured logs.' }
+                  { name: 'FastAPI Gateway', icon: Network, desc: 'Handles rate limits, programmatic prompt injection guards, and JWT auth.' },
+                  { name: 'DAG Executor', icon: Activity, desc: 'Async task manager with dependency-aware resolution and reverse mapping.' },
+                  { name: 'Redis Cache & Locks', icon: ShieldCheck, desc: 'Exact SHA-256 hash caching, telemetry DLQ, and distributed locking.' },
+                  { name: 'Qdrant Vector DB', icon: RotateCcw, desc: 'Houses tenant-isolated embeddings for semantic cache matching.' },
+                  { name: 'Observability Stack', icon: Clock, desc: 'structlog for JSON logging, OpenTelemetry for traces, and Redis for durable cost tracking.' }
                 ].map(comp => (
-                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
+                  <div key={comp.name} className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 hover:border-slate-700 transition-colors">
                     <div className="flex items-center gap-3 mb-3">
                       <comp.icon className="w-5 h-5 text-slate-400" />
                       <h3 className="text-white font-medium">{comp.name}</h3>
@@ -216,10 +269,10 @@ export default function HexaRuntimePage() {
               
               <div className="flex flex-wrap gap-4">
                 {[
-                  'Distributed Runtime',
-                  'Multi-Region Execution',
-                  'Event Streaming',
-                  'Agent Runtime Mesh'
+                  'Dynamic DAG Generation',
+                  'Durable Step Execution Persistence',
+                  'Dense/Sparse Hybrid Vector Search',
+                  'Dashboard Visualization UI'
                 ].map(item => (
                   <div key={item} className="px-5 py-3 border border-slate-800 rounded-full bg-slate-900/20 text-slate-400 text-sm font-medium tracking-tight">
                     {item}

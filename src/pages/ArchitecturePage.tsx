@@ -37,11 +37,10 @@ export default function ArchitecturePage() {
               <SidebarLink href="#overview">Overview</SidebarLink>
               <SidebarLink href="#executive-summary">Executive Summary</SidebarLink>
               <SidebarLink href="#cognitive-vs-runtime">Cognitive vs Runtime</SidebarLink>
-              <SidebarLink href="#provider-abstraction">Provider Abstraction</SidebarLink>
+              <SidebarLink href="#infrastructure-stack">Infrastructure Stack</SidebarLink>
               <SidebarLink href="#ai-ecosystem">AI Provider Ecosystem</SidebarLink>
               <SidebarLink href="#infrastructure-portability">Infrastructure Portability</SidebarLink>
-              <SidebarLink href="#principles">Principles</SidebarLink>
-              <SidebarLink href="#evolution">Architecture Evolution</SidebarLink>
+              <SidebarLink href="#tech-stack">Tech Stack</SidebarLink>
             </div>
           </aside>
 
@@ -54,13 +53,13 @@ export default function ArchitecturePage() {
                 Architecture for Autonomous Intelligence
               </h1>
               <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-10">
-                A layered infrastructure stack for planning, execution, orchestration, and operation of autonomous systems.
+                A layered infrastructure stack strictly separating cognitive planning from durable execution.
               </p>
               
               <div className="p-6 bg-slate-900/50 border border-slate-800/80 rounded-xl">
                 <p className="text-lg text-slate-300 font-medium tracking-tight">
-                  "Applications should not be tightly coupled to AI providers or infrastructure vendors. 
-                  INEXA provides the orchestration and cognitive layers that enable portability across both."
+                  "Applications should not be tightly coupled to AI providers or fragile execution contexts. 
+                  INEXA provides the orchestration and cognitive boundaries that enable scale, reliability, and portability."
                 </p>
               </div>
             </section>
@@ -79,11 +78,11 @@ export default function ArchitecturePage() {
                     <h3 className="font-semibold">Hexa Cognitive</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-400">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> planning</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> reasoning</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> reflection</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> memory</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> coordination</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Planning & Reasoning</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Adaptive Replanning</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Reflection & Replay Caching</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Safe Memory Persistence</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Memory Lineage (10 hops)</li>
                   </ul>
                 </div>
                 
@@ -93,11 +92,11 @@ export default function ArchitecturePage() {
                     <h3 className="font-semibold">Hexa Runtime</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-400">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> orchestration</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> execution</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> replay</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> routing</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> observability</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Async DAG Execution</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Semaphore Concurrency Limit</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Circuit Breaker & Fallback</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Hybrid Semantic + Exact Cache</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Durable Telemetry (DLQ)</li>
                   </ul>
                 </div>
               </div>
@@ -107,7 +106,7 @@ export default function ArchitecturePage() {
             <section id="cognitive-vs-runtime" className="py-16 border-b border-slate-800/50">
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Cognitive vs Runtime Layer</h2>
               <p className="text-slate-400 mb-8 leading-relaxed">
-                Reasoning and execution are intentionally separated to ensure durability, security, and strict operational boundaries.
+                Reasoning and execution are intentionally separated to ensure durability, security, and strict operational boundaries. Cognitive decides; Runtime executes.
               </p>
 
               <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/20">
@@ -120,33 +119,33 @@ export default function ArchitecturePage() {
                   </thead>
                   <tbody className="divide-y divide-slate-800/50">
                     <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">decides</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">executes</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Translates Intents to DAGs</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Executes DAG Nodes via Semaphores</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">plans</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">schedules</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Manages Autonomy Sessions & Budgets</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Handles Livelocks & Deadlocks</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">reasons</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">routes</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Patches DAGs (Adaptive Replanning)</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Retries Nodes & Trips Circuit Breakers</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">remembers</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">retries</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Saves Memory on Callback Success</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Checkpoints State after Every Node</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">reflects</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">observes</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Maintains Memory Lineage (PostgreSQL)</td>
+                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Tracks Sub-cent Telemetry (Redis DLQ)</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </section>
 
-            {/* PROVIDER ABSTRACTION DIAGRAM */}
-            <section id="provider-abstraction" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Provider Abstraction Diagram</h2>
+            {/* UNIFIED STACK DIAGRAM */}
+            <section id="infrastructure-stack" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Infrastructure Stack</h2>
               <p className="text-slate-400 mb-10 leading-relaxed">
                 Applications integrate once, while the runtime manages provider diversity and infrastructure portability.
               </p>
@@ -155,10 +154,18 @@ export default function ArchitecturePage() {
                 <div className="px-6 py-3 border border-slate-700 bg-slate-800 rounded-lg text-white mb-4 w-64 text-center">Applications</div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
-                <div className="px-6 py-3 border border-slate-600 bg-slate-800/80 rounded-lg text-slate-200 mb-4 w-64 text-center">Hexa Cognitive</div>
+                <div className="px-6 py-3 border border-indigo-500/30 bg-indigo-900/20 rounded-lg text-indigo-300 mb-4 w-72 text-center shadow-[0_0_15px_rgba(99,102,241,0.1)]">
+                  <span className="block font-bold mb-2">Hexa Cognitive</span>
+                  <span className="text-[10px] opacity-70 block">Planning • Reflection • Adaptive Replanning</span>
+                  <span className="text-[10px] opacity-70 block">Memory Lineage • Autonomy Sessions</span>
+                </div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
-                <div className="px-6 py-3 border border-slate-600 bg-slate-800/80 rounded-lg text-slate-200 mb-4 w-64 text-center">Hexa Runtime</div>
+                <div className="px-6 py-3 border border-emerald-500/30 bg-emerald-900/20 rounded-lg text-emerald-300 mb-4 w-72 text-center shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                  <span className="block font-bold mb-2">Hexa Runtime</span>
+                  <span className="text-[10px] opacity-70 block">DAG Executor • Provider Router • Circuit Breaker</span>
+                  <span className="text-[10px] opacity-70 block">Telemetry DLQ • Hybrid Cache</span>
+                </div>
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
                 <div className="flex flex-wrap justify-center items-center gap-3 mb-4 w-full max-w-2xl">
@@ -192,7 +199,7 @@ export default function ArchitecturePage() {
                 <ArrowDown className="w-5 h-5 text-slate-600 mb-4" />
                 
                 <div className="px-6 py-3 border border-slate-700 bg-slate-950 rounded-lg text-slate-400 w-80 text-center">
-                  Compute Infrastructure
+                  Compute / GPU / Network
                 </div>
               </div>
             </section>
@@ -277,54 +284,25 @@ export default function ArchitecturePage() {
                     })}
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-4">Infrastructure Categories</h4>
-                  <div className="flex flex-wrap gap-4">
-                    {['GPU Compute', 'Storage', 'Networking', 'Data Centers'].map(cat => (
-                      <div key={cat} className="px-4 py-2 border border-slate-800/50 rounded-full bg-slate-900/50 text-slate-500 text-sm">
-                        {cat}
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </section>
 
-            {/* PRINCIPLES */}
-            <section id="principles" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Infrastructure Principles</h2>
+            {/* TECH STACK */}
+            <section id="tech-stack" className="py-16">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Core Technologies</h2>
 
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { title: 'Durable by Default', desc: 'Workflows persist across failures and can resume from exact points of interruption.' },
-                  { title: 'Autonomous by Design', desc: 'Systems are built to operate with minimal human intervention over long lifecycles.' },
-                  { title: 'Observable Execution', desc: 'Every step, reasoning cycle, and API call is deterministically logged and visible.' },
-                  { title: 'Provider Agnostic', desc: 'Built to prevent vendor lock-in across both foundation models and compute layers.' },
-                  { title: 'Composable Systems', desc: 'Modularity allows tailored infrastructure deployment scaling from edge to enterprise.' },
-                  { title: 'Enterprise Ready', desc: 'Adheres to strict security, role-based access, and predictable performance standards.' }
-                ].map(principle => (
-                  <div key={principle.title} className="p-6 border border-slate-800 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 transition-colors">
-                    <h3 className="text-white font-medium mb-2">{principle.title}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">{principle.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* EVOLUTION */}
-            <section id="evolution" className="py-16">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Architecture Evolution</h2>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  'Multi-Agent Coordination',
-                  'Cognitive Memory Fabric',
-                  'Distributed Intelligence Mesh',
-                  'Autonomous Operations Platform'
-                ].map(item => (
-                  <div key={item} className="p-5 border border-slate-800 border-l-2 border-l-slate-600 rounded-r-xl bg-slate-900/30 text-slate-300 font-medium text-sm tracking-tight">
-                    {item}
+                  { title: 'Redis', desc: 'Exact SHA-256 hash caching, distributed locks, and durable DLQ telemetry pipelines.' },
+                  { title: 'Qdrant', desc: 'Semantic cache matching and dense vector storage for isolated tenant memory.' },
+                  { title: 'PostgreSQL & asyncpg', desc: 'Robust storage for memory lineage spanning up to 10 hops of ancestry tracking.' },
+                  { title: 'FastAPI', desc: 'High-performance async I/O handling gateway routing, JWT authentication, and prompt guards.' },
+                  { title: 'OpenTelemetry', desc: 'Distributed tracing spans and metrics for observability across all provider hops.' },
+                  { title: 'structlog', desc: 'Structured JSON logging for programmatic ingestion into SIEM and monitoring systems.' }
+                ].map(tech => (
+                  <div key={tech.title} className="p-6 border border-slate-800 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 transition-colors">
+                    <h3 className="text-white font-medium mb-2">{tech.title}</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed">{tech.desc}</p>
                   </div>
                 ))}
               </div>
