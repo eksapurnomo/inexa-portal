@@ -8,6 +8,7 @@ import HexaRuntimePage from './pages/HexaRuntimePage';
 import HexaCognitivePage from './pages/HexaCognitivePage';
 import ResearchPage from './pages/ResearchPage';
 import CompanyPage from './pages/CompanyPage';
+import DocsPage from './pages/DocsPage';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/products/hexa-cognitive" element={<HexaCognitivePage />} />
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/company" element={<CompanyPage />} />
+          <Route path="/docs" element={<DocsPage />} />
+          <Route path="/docs/:sectionSlug/:pageSlug" element={<DocsPage />} />
         </Routes>
       </main>
       <Footer />

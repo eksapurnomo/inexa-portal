@@ -40,6 +40,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link to="/products/hexa-runtime" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</Link></li>
               <li><Link to="/products/hexa-cognitive" className="text-slate-400 hover:text-white transition-colors">Hexa Cognitive</Link></li>
+              <li><Link to="/docs" className="text-slate-400 hover:text-white transition-colors">Documentation</Link></li>
             </ul>
           </div>
 
