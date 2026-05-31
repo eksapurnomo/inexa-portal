@@ -33,8 +33,8 @@ export default function Navbar() {
             <Link to="/architecture" className={`text-sm font-medium transition-colors ${location.pathname === '/architecture' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Architecture</Link>
             <a href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
             <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
-            <a href={location.pathname === '/' ? '#about' : '/#about'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
-            <a href={location.pathname === '/' ? '#contact' : '/#contact'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+            <Link to="/company" className={`text-sm font-medium transition-colors ${location.pathname === '/company' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Company</Link>
+            <a href="/company#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
             <a href="https://github.com/eksapurnomo/inexa-ai" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
               <GithubIcon className="w-5 h-5" />
             </a>
@@ -90,15 +90,15 @@ export default function Navbar() {
               >
                 Research
               </Link>
-              <a 
-                href={location.pathname === '/' ? '#about' : '/#about'} 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
+              <Link 
+                to="/company" 
+                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/company' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
-              </a>
+                Company
+              </Link>
               <a 
-                href={location.pathname === '/' ? '#contact' : '/#contact'} 
+                href="/company#contact" 
                 className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

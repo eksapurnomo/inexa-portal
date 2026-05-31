@@ -98,6 +98,53 @@ export default function ProductsOverviewPage() {
             </div>
           </section>
 
+          {/* DEPLOYMENT TARGETS */}
+          <section className="pt-16 mt-16 border-t border-slate-800/50">
+            <h2 className="text-3xl font-semibold tracking-tighter text-white mb-4">
+              Deployment Targets
+            </h2>
+            <p className="text-slate-400 mb-10 leading-relaxed max-w-2xl">
+              Architectural patterns supported by INEXA's cognitive and runtime layers across key industries.
+            </p>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Enterprise Operations',
+                  items: ['Workflow Automation', 'Internal AI Copilot', 'Knowledge Systems', 'Process Orchestration']
+                },
+                {
+                  title: 'Digital Finance',
+                  items: ['Risk Analysis', 'Lending Automation', 'Fraud Detection', 'AI Financial Services']
+                },
+                {
+                  title: 'Marketplace Platforms',
+                  items: ['Product Intelligence', 'Seller Copilot', 'Content Moderation', 'Recommendation Systems']
+                },
+                {
+                  title: 'Logistics & Supply Chain',
+                  items: ['Fleet Coordination', 'Route Optimization', 'Inventory Intelligence', 'Supply Monitoring']
+                },
+                {
+                  title: 'Public Sector',
+                  items: ['Citizen Services', 'Case Management', 'Knowledge Access', 'Digital Operations']
+                }
+              ].map(target => (
+                <div key={target.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20">
+                  <h3 className="font-semibold text-white mb-4">{target.title}</h3>
+                  <ul className="space-y-2">
+                    {target.items.map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 mr-3 flex-shrink-0 opacity-60"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
         </main>
 
       </div>

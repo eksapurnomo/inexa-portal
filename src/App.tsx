@@ -7,6 +7,8 @@ import ProductsOverviewPage from './pages/ProductsOverviewPage';
 import HexaRuntimePage from './pages/HexaRuntimePage';
 import HexaCognitivePage from './pages/HexaCognitivePage';
 import ResearchPage from './pages/ResearchPage';
+import CompanyPage from './pages/CompanyPage';
+
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-slate-500/30">
@@ -19,6 +21,7 @@ function App() {
           <Route path="/products/hexa-runtime" element={<HexaRuntimePage />} />
           <Route path="/products/hexa-cognitive" element={<HexaCognitivePage />} />
           <Route path="/research" element={<ResearchPage />} />
+          <Route path="/company" element={<CompanyPage />} />
         </Routes>
       </main>
       <Footer />

@@ -1,27 +1,15 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, FileText, FlaskConical, Clock } from 'lucide-react';
+import { ChevronRight, Clock } from 'lucide-react';
 
-const roadmapItems = [
-  {
-    title: 'Dynamic DAG Generation',
-    description: 'Investigating AI-driven workflows where the execution graph is generated and optimized on the fly based on runtime context.',
-  },
-  {
-    title: 'Durable Step Execution Persistence',
-    description: 'Exploring Event Sourcing patterns to replace state mutation with an immutable append-only log of execution steps.',
-  },
-  {
-    title: 'Dense/Sparse Hybrid Vector Search',
-    description: 'Enhancing the Qdrant semantic cache layer with BM25 sparse vectors to improve exact-match recall in highly technical contexts.',
-  },
-  {
-    title: 'Verified Memory Persistence',
-    description: 'Formal verification of memory lineage to ensure cognitive poisoning cannot propagate across autonomous session boundaries.',
-  },
-  {
-    title: 'Autonomous Operations Reliability',
-    description: 'Frameworks for livelock detection and programmatic budget exhaustion in unbounded autonomous agent loops.',
-  }
+const researchDirections = [
+  { title: 'Autonomous Planning Systems', status: 'In Development', description: 'Investigating dynamic context-aware autonomous planning architectures that can navigate complex multi-step reasoning goals.' },
+  { title: 'Adaptive Replanning', status: 'In Development', description: 'Strategies for real-time path correction when an autonomous system encounters runtime errors or logical dead-ends.' },
+  { title: 'Cognitive Memory Graphs', status: 'Planned', description: 'Architecting semantic knowledge representations that persist across distinct sessions without state corruption.' },
+  { title: 'Multi-Agent Coordination', status: 'Planned', description: 'Protocols for distributing cognitive load across specialized autonomous agents working in parallel.' },
+  { title: 'Durable Execution Infrastructure', status: 'In Development', description: 'Building the fundamental routing, execution, and state checkpointing primitives for non-deterministic AI tasks.' },
+  { title: 'Runtime Reliability', status: 'In Development', description: 'System-level guarantees for observability, failure handling, and retry semantics within an autonomous loop.' },
+  { title: 'Provider-Agnostic AI Infrastructure', status: 'In Development', description: 'Techniques for normalizing LLM interactions, streaming, and tool use across divergent foundation models.' },
+  { title: 'Verified Memory Persistence', status: 'Planned', description: 'Mechanisms ensuring memory logs are only permanently appended following explicit confirmation of operational success.' }
 ];
 
 export default function ResearchPage() {
@@ -47,35 +35,23 @@ export default function ResearchPage() {
             </p>
           </section>
 
-          {/* PUBLISHED RESEARCH */}
-          <section className="mb-24">
-            <h2 className="text-2xl font-semibold text-white tracking-tight mb-8 flex items-center gap-3">
-              <FileText className="w-6 h-6 text-slate-500" />
-              Published Research
-            </h2>
-            
-            <div className="p-12 border border-slate-800 border-dashed rounded-2xl bg-slate-900/10 flex flex-col items-center justify-center text-center">
-              <FlaskConical className="w-10 h-10 text-slate-600 mb-4 opacity-50" />
-              <h3 className="text-lg font-medium text-slate-300 mb-2">Research publications coming soon</h3>
-              <p className="text-slate-500 text-sm max-w-md">
-                Our team is currently preparing foundational papers based on our architecture audit. Check back later for updates.
-              </p>
-            </div>
-          </section>
-
-          {/* RESEARCH ROADMAP */}
+          {/* RESEARCH DIRECTIONS */}
           <section>
             <h2 className="text-2xl font-semibold text-white tracking-tight mb-8 flex items-center gap-3">
               <Clock className="w-6 h-6 text-slate-500" />
-              Research Roadmap
+              Research Directions
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
-              {roadmapItems.map((item, idx) => (
-                <div key={idx} className="p-8 border border-slate-800 rounded-2xl bg-slate-900/30 flex flex-col h-full hover:border-slate-700 hover:bg-slate-900/50 transition-colors duration-300">
+              {researchDirections.map((item, idx) => (
+                <div key={idx} className="p-8 border border-slate-800 rounded-2xl bg-slate-900/30 flex flex-col h-full hover:border-slate-700 hover:bg-slate-900/50 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(255,255,255,0.05)] transition-all duration-300">
                   <div className="mb-4 flex items-center">
-                    <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-semibold uppercase tracking-widest border border-slate-700">
-                      Planned
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest border ${
+                      item.status === 'In Development' 
+                        ? 'bg-indigo-900/30 text-indigo-300 border-indigo-500/30' 
+                        : 'bg-slate-800 text-slate-300 border-slate-700'
+                    }`}>
+                      {item.status}
                     </span>
                   </div>
                   <h3 className="text-xl font-medium text-white mb-3 tracking-tight">
