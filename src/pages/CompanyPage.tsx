@@ -31,17 +31,17 @@ export default function CompanyPage() {
           {/* VISION & MISSION */}
           <section className="mb-20">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-6">
-              Infrastructure for Autonomous Intelligence
+              Human-Governed AI Workforce Operating System
             </h1>
             <div className="prose prose-invert max-w-none text-slate-400">
               <p className="text-xl leading-relaxed tracking-tight mb-8">
-                INEXA is building the foundational infrastructure layer for autonomous systems, enabling organizations to deploy reliable cognitive and execution architectures across real-world industries.
+                EXA Space is building the foundational Hexa Platform, an enterprise AI infrastructure enabling organizations to deploy secure, autonomous AI workforces across real-world industries.
               </p>
               
               <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/30">
                 <h3 className="text-lg font-semibold text-white mb-3">Our Mission</h3>
                 <p className="leading-relaxed m-0 text-slate-300">
-                  Provide vendor-agnostic infrastructure for planning, reasoning, orchestration, memory, and execution at enterprise scale.
+                  Provide vendor-agnostic infrastructure for planning (Cognitive), execution (Runtime), memory (Memory), knowledge retrieval (Knowledge), and control (Governance) at enterprise scale.
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function CompanyPage() {
           <section className="mb-24">
             <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Open Ecosystem</h2>
             <p className="text-slate-400 mb-10 leading-relaxed">
-              INEXA is designed to operate across multiple AI providers and infrastructure vendors without vendor lock-in.
+              Hexa Platform is designed to operate across multiple AI providers and infrastructure vendors without vendor lock-in.
             </p>
 
             <div className="space-y-10">

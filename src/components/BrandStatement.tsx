@@ -12,14 +12,14 @@ export default function BrandStatement() {
           className="space-y-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tighter leading-tight">
-            We build the foundational layer for <br className="hidden md:block" />
-            <span className="text-slate-400">autonomous enterprise ecosystems.</span>
+            The Human-Governed AI <br className="hidden md:block" />
+            <span className="text-slate-400">Workforce Operating System.</span>
           </h2>
           
           <div className="w-16 h-px bg-slate-700 mx-auto my-12" />
           
           <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto tracking-tight font-light">
-            INEXA is not a consumer application. We are an infrastructure company focused on delivering the durable orchestration, cognitive planning, and decentralized execution engines required for the next generation of scalable AI systems.
+            EXA Space is an enterprise AI infrastructure company delivering the Hexa Platform—a complete operating system providing Planning, Execution, Memory, Knowledge, and Governance to deploy secure AI workforces at scale.
           </p>
         </motion.div>
       </div>

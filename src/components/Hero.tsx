@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="flex justify-center mb-10">
             <img 
               src="/Contemporary Minimalist Logo for inexa.space - Teal-1@1.25x.svg" 
-              alt="INEXA" 
+              alt="EXA Space" 
               className="h-16 md:h-20 lg:h-24 w-auto max-w-[240px] md:max-w-[320px] object-contain drop-shadow-xl opacity-90"
             />
           </div>
@@ -30,16 +30,16 @@ export default function Hero() {
             className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/80 text-slate-300 text-sm font-medium mb-10 shadow-sm backdrop-blur-sm"
           >
             <span className="flex h-2 w-2 rounded-full bg-slate-400"></span>
-            <span className="tracking-wide">Global Intelligence Orchestration</span>
+            <span className="tracking-wide">Enterprise AI Infrastructure</span>
           </motion.div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-semibold tracking-tight text-white mb-10">
-            Infrastructure for{' '}
-            <span className="text-slate-300 block mt-3">Autonomous Intelligence</span>
+            Human-Governed AI <br />
+            <span className="text-slate-300 block mt-3">Infrastructure</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed tracking-tight">
-            Build, orchestrate, and operate cognitive systems across providers, environments, and industries.
+            Core Infrastructure for Enterprise AI Systems
           </p>
 
           <motion.div 

@@ -3,7 +3,8 @@ import {
   ChevronRight, CheckCircle2, 
   Brain, Workflow
 } from 'lucide-react';
-import { InexaStackDiagram } from '../components/diagrams/InexaStackDiagram';
+import { MainArchitectureDiagram } from '../components/diagrams/MainArchitectureDiagram';
+import { RequestLifecycleDiagram } from '../components/diagrams/RequestLifecycleDiagram';
 import {
   LogoOpenAI, LogoAnthropic, LogoGemini, LogoLlama, LogoGroq,
   LogoDeepSeek, LogoMistral, LogoCohere, LogoBytePlus, LogoxAI,
@@ -37,11 +38,12 @@ export default function ArchitecturePage() {
               <h3 className="px-3 text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Architecture</h3>
               <SidebarLink href="#overview">Overview</SidebarLink>
               <SidebarLink href="#executive-summary">Executive Summary</SidebarLink>
-              <SidebarLink href="#cognitive-vs-runtime">Cognitive vs Runtime</SidebarLink>
-              <SidebarLink href="#infrastructure-stack">Infrastructure Stack</SidebarLink>
+              <SidebarLink href="#enterprise-architecture">Enterprise Architecture</SidebarLink>
+              <SidebarLink href="#request-lifecycle">Request Lifecycle</SidebarLink>
+              <SidebarLink href="#deployment-architecture">Deployment Architecture</SidebarLink>
+              <SidebarLink href="#enterprise-principles">Enterprise Principles</SidebarLink>
               <SidebarLink href="#ai-ecosystem">AI Provider Ecosystem</SidebarLink>
               <SidebarLink href="#infrastructure-portability">Infrastructure Portability</SidebarLink>
-              <SidebarLink href="#tech-stack">Tech Stack</SidebarLink>
             </div>
           </aside>
 
@@ -51,10 +53,10 @@ export default function ArchitecturePage() {
             {/* HERO */}
             <section id="overview" className="py-12 border-b border-slate-800/50">
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-6">
-                Architecture for Autonomous Intelligence
+                Hexa Platform Architecture Overview
               </h1>
               <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight mb-10">
-                A layered infrastructure stack strictly separating cognitive planning from durable execution.
+                EXA Space uses a cloud-native microservices architecture designed for enterprise-grade AI workloads.
               </p>
               
               <div className="p-6 bg-slate-900/50 border border-slate-800/80 rounded-xl">
@@ -69,90 +71,188 @@ export default function ArchitecturePage() {
             <section id="executive-summary" className="py-16 border-b border-slate-800/50">
               <h2 className="text-2xl font-semibold text-white tracking-tight mb-6">Executive Summary</h2>
               <p className="text-slate-400 mb-8 leading-relaxed">
-                INEXA provides two foundational layers that, together, provide infrastructure for autonomous intelligence.
+                Hexa Platform provides 5 foundational microservices that operate together as the Human-Governed AI Workforce Operating System.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
                   <div className="flex items-center gap-3 mb-4 text-white">
                     <Brain className="w-5 h-5 text-slate-400" />
-                    <h3 className="font-semibold">Hexa Cognitive</h3>
+                    <h3 className="font-semibold">Hexa Cognitive (The Brain)</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-400">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Planning & Reasoning</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Adaptive Replanning</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Reflection & Replay Caching</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Safe Memory Persistence</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Memory Lineage (10 hops)</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> DAG Generation & Planning</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Context Injection</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Replanning Logic</li>
                   </ul>
                 </div>
                 
                 <div className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
                   <div className="flex items-center gap-3 mb-4 text-white">
                     <Workflow className="w-5 h-5 text-slate-400" />
-                    <h3 className="font-semibold">Hexa Runtime</h3>
+                    <h3 className="font-semibold">Hexa Runtime (The Muscle)</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-400">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Async DAG Execution</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Semaphore Concurrency Limit</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Circuit Breaker & Fallback</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Hybrid Semantic + Exact Cache</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Durable Telemetry (DLQ)</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Stateless execution engine</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Multi-provider failover</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Circuit breaker & Telemetry</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
+                  <div className="flex items-center gap-3 mb-4 text-white">
+                    <h3 className="font-semibold">Hexa Memory (The Experience)</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Long-Term Vector Store</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Contextual Lineage</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Stored ONLY after success</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800 rounded-xl bg-slate-900/30">
+                  <div className="flex items-center gap-3 mb-4 text-white">
+                    <h3 className="font-semibold">Hexa Knowledge (The Truth)</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Real-time enterprise data gateway</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Connects to SAP & SharePoint</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Connects to SQL & REST APIs</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800 rounded-xl bg-slate-900/30 sm:col-span-2">
+                  <div className="flex items-center gap-3 mb-4 text-white">
+                    <h3 className="font-semibold">Hexa Governance (The Shield)</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-400 grid sm:grid-cols-2">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Human-in-the-loop control system</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Policy enforcement & Risk scoring</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-slate-600" /> Multi-level approval workflow</li>
                   </ul>
                 </div>
               </div>
             </section>
 
-            {/* COGNITIVE VS RUNTIME */}
-            <section id="cognitive-vs-runtime" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Cognitive vs Runtime Layer</h2>
+            {/* ENTERPRISE ARCHITECTURE */}
+            <section id="enterprise-architecture" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Enterprise Architecture</h2>
               <p className="text-slate-400 mb-8 leading-relaxed">
-                Reasoning and execution are intentionally separated to ensure durability, security, and strict operational boundaries. Cognitive decides; Runtime executes.
-              </p>
-
-              <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/20">
-                <table className="w-full text-left text-sm">
-                  <thead className="bg-slate-900/60 border-b border-slate-800">
-                    <tr>
-                      <th className="px-6 py-4 font-semibold text-white w-1/2 border-r border-slate-800">Hexa Cognitive</th>
-                      <th className="px-6 py-4 font-semibold text-white w-1/2">Hexa Runtime</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-800/50">
-                    <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Translates Intents to DAGs</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Executes DAG Nodes via Semaphores</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Manages Autonomy Sessions & Budgets</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Handles Livelocks & Deadlocks</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Patches DAGs (Adaptive Replanning)</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Retries Nodes & Trips Circuit Breakers</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Saves Memory on Callback Success</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Checkpoints State after Every Node</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs border-r border-slate-800">Maintains Memory Lineage (PostgreSQL)</td>
-                      <td className="px-6 py-4 text-slate-300 font-mono text-xs">Tracks Sub-cent Telemetry (Redis DLQ)</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            {/* UNIFIED STACK DIAGRAM */}
-            <section id="infrastructure-stack" className="py-16 border-b border-slate-800/50">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Infrastructure Stack</h2>
-              <p className="text-slate-400 mb-10 leading-relaxed">
-                Applications integrate once, while the runtime manages provider diversity and infrastructure portability.
+                The Control Plane routes intents through the Gateway to the 4 core execution/planning microservices. Every action must pass the Governance shield before touching Enterprise Systems.
               </p>
 
               <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 mx-auto">
-                <InexaStackDiagram />
+                <MainArchitectureDiagram />
+              </div>
+            </section>
+
+            {/* REQUEST LIFECYCLE */}
+            <section id="request-lifecycle" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Request Lifecycle</h2>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                A deterministic, safe, and verifiable flow from User Intent to Memory Persistence.
+              </p>
+
+              <div className="p-8 border border-slate-800 rounded-xl bg-slate-900/20 mx-auto">
+                <RequestLifecycleDiagram />
+              </div>
+            </section>
+
+            {/* ENTERPRISE DEPLOYMENT ARCHITECTURE */}
+            <section id="deployment-architecture" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Enterprise Deployment Architecture</h2>
+              <p className="text-slate-400 mb-10 leading-relaxed">
+                EXA Space is designed for cloud-native enterprise environments.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">1.</span> Compute Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Docker</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Kubernetes</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Service Mesh (Istio / Linkerd)</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Helm</li>
+                  </ul>
+                </div>
+                
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">2.</span> Data Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> PostgreSQL + pgvector</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Redis Cluster</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> S3 / MinIO</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">3.</span> Networking Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> API Gateway (Kong / Traefik)</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> NGINX Ingress</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Identity Provider (Keycloak / Auth0)</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">4.</span> Observability Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> OpenTelemetry</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Prometheus</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Grafana</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Loki / ELK</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">5.</span> Security Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> HashiCorp Vault</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> OPA (Policy Engine)</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> mTLS Service Communication</li>
+                  </ul>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <h3 className="text-white font-medium mb-4 flex items-center"><span className="text-indigo-400 mr-2">6.</span> CI/CD Layer</h3>
+                  <ul className="space-y-2 text-sm text-slate-400">
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> GitHub Actions</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> ArgoCD</li>
+                    <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Terraform</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* KEY ENTERPRISE PRINCIPLES */}
+            <section id="enterprise-principles" className="py-16 border-b border-slate-800/50">
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Key Enterprise Principles</h2>
+
+              <div className="space-y-6">
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/20">
+                  <h3 className="text-lg font-semibold text-white mb-2">1. Stateless Compute, Stateful Data</h3>
+                  <p className="text-sm text-slate-400">Cognitive & Runtime services are entirely stateless, while Memory & Knowledge services provide isolated, persistent data layers.</p>
+                </div>
+                
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/20">
+                  <h3 className="text-lg font-semibold text-white mb-2">2. Zero Trust Architecture</h3>
+                  <p className="text-sm text-slate-400">There is no implicit trust between internal services. All internal service-to-service communication is encrypted.</p>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/20">
+                  <h3 className="text-lg font-semibold text-white mb-2">3. Human-Governed System</h3>
+                  <p className="text-sm text-slate-400">AI does not execute critical actions without human approval. All operational workflows are intercepted by the Governance Layer.</p>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/20">
+                  <h3 className="text-lg font-semibold text-white mb-2">4. Runtime-Confirmed Memory</h3>
+                  <p className="text-sm text-slate-400">Only successful executions are stored. Failed actions or hallucinations are strictly discarded to prevent knowledge base poisoning.</p>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/20">
+                  <h3 className="text-lg font-semibold text-white mb-2">5. Vendor-Agnostic Design</h3>
+                  <p className="text-sm text-slate-400">Supports AWS (EKS), GCP (GKE), Azure (AKS), and secure On-premise deployments.</p>
+                </div>
               </div>
             </section>
 
@@ -239,26 +339,7 @@ export default function ArchitecturePage() {
               </div>
             </section>
 
-            {/* TECH STACK */}
-            <section id="tech-stack" className="py-16">
-              <h2 className="text-2xl font-semibold text-white tracking-tight mb-8">Core Technologies</h2>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  { title: 'Redis', desc: 'Exact SHA-256 hash caching, distributed locks, and durable DLQ telemetry pipelines.' },
-                  { title: 'Qdrant', desc: 'Semantic cache matching and dense vector storage for isolated tenant memory.' },
-                  { title: 'PostgreSQL & asyncpg', desc: 'Robust storage for memory lineage spanning up to 10 hops of ancestry tracking.' },
-                  { title: 'FastAPI', desc: 'High-performance async I/O handling gateway routing, JWT authentication, and prompt guards.' },
-                  { title: 'OpenTelemetry', desc: 'Distributed tracing spans and metrics for observability across all provider hops.' },
-                  { title: 'structlog', desc: 'Structured JSON logging for programmatic ingestion into SIEM and monitoring systems.' }
-                ].map(tech => (
-                  <div key={tech.title} className="p-6 border border-slate-800 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.15)] hover:border-slate-700/80 transition-all duration-300">
-                    <h3 className="text-white font-medium mb-2">{tech.title}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
 
           </main>
         </div>

@@ -1,44 +1,44 @@
 import { motion } from 'framer-motion';
-import { Database, Cpu, BrainCircuit, LayoutGrid, ArrowUp, Cloud } from 'lucide-react';
+import { Database, Zap, HardDrive, Network, Boxes, ArrowUp } from 'lucide-react';
 
-const layers = [
+const infrastructureLayers = [
   {
-    id: 'applications',
-    title: 'Applications & Industries',
-    description: 'Enterprise ecosystems powered by our infrastructure',
-    icon: LayoutGrid,
+    id: 'api-gateway',
+    title: 'API Gateway',
+    description: 'Secure routing, telemetry, and external load balancing',
+    icon: Network,
     color: 'border-slate-800 bg-slate-900/40 text-slate-200',
     delay: 1.0
   },
   {
-    id: 'cognitive',
-    title: 'Hexa Cognitive Layer',
-    description: 'Adaptive planning, memory, and multi-agent coordination',
-    icon: BrainCircuit,
+    id: 'orchestration',
+    title: 'Kubernetes',
+    description: 'Container orchestration, auto-scaling, and self-healing',
+    icon: Boxes,
     color: 'border-slate-800/80 bg-slate-900/60 text-slate-300',
     delay: 0.8
   },
   {
-    id: 'runtime',
-    title: 'Hexa Runtime Layer',
-    description: 'Durable execution, orchestration, and provider routing',
-    icon: Cpu,
+    id: 'caching',
+    title: 'Redis',
+    description: 'High-performance caching and event streaming',
+    icon: Zap,
     color: 'border-slate-700/60 bg-slate-800/30 text-slate-300',
     delay: 0.6
   },
   {
-    id: 'providers',
-    title: 'AI Providers',
-    description: 'Underlying foundation models and intelligence systems',
-    icon: Cloud,
+    id: 'database',
+    title: 'PostgreSQL + pgvector',
+    description: 'Persistent memory, embeddings, and governance data',
+    icon: Database,
     color: 'border-slate-700/60 bg-slate-800/30 text-slate-400',
     delay: 0.4
   },
   {
-    id: 'infrastructure',
-    title: 'Infrastructure',
-    description: 'Cloud, Compute, GPU, Storage, Networking',
-    icon: Database,
+    id: 'storage',
+    title: 'Object Storage',
+    description: 'Durable storage for enterprise documents and artifacts',
+    icon: HardDrive,
     color: 'border-slate-700 bg-slate-800/50 text-slate-500',
     delay: 0.2
   }
@@ -46,7 +46,7 @@ const layers = [
 
 export default function Architecture() {
   return (
-    <section id="architecture" className="py-32 relative overflow-hidden">
+    <section id="infrastructure" className="py-32 relative overflow-hidden bg-slate-950">
       <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700/30 to-transparent" />
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,7 +57,7 @@ export default function Architecture() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-semibold tracking-tighter text-white mb-6"
           >
-            Systems Architecture
+            Infrastructure Foundation
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function Architecture() {
             transition={{ delay: 0.1 }}
             className="text-slate-400 text-lg leading-relaxed tracking-tight"
           >
-            INEXA sits above modern AI providers and infrastructure, providing orchestration, cognition, execution, and operational intelligence.
+            EXA Space is built on modern cloud-native infrastructure designed for massive scale, low latency, and absolute enterprise reliability.
           </motion.p>
         </div>
 
@@ -74,9 +74,9 @@ export default function Architecture() {
           {/* Central connecting line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-700/50 to-transparent -translate-x-1/2 -z-10" />
 
-          {layers.map((layer, index) => (
+          {infrastructureLayers.map((layer, index) => (
             <div key={layer.id} className="relative">
-              {/* Optional upward arrows between layers */}
+              {/* Upward arrows between layers */}
               {index !== 0 && (
                 <motion.div 
                   initial={{ opacity: 0 }}

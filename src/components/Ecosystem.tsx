@@ -95,7 +95,7 @@ const itemVariants: Variants = {
 
 export default function Ecosystem() {
   return (
-    <section id="ecosystem" className="py-24 relative z-10 bg-slate-950/50 border-t border-slate-800/50">
+    <section id="industries" className="py-24 relative z-10 bg-slate-950/50 border-t border-slate-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION 1: INDUSTRIES */}
@@ -107,7 +107,7 @@ export default function Ecosystem() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4"
             >
-              Industries Powered by INEXA
+              Industries Powered by Hexa Platform
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}

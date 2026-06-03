@@ -22,21 +22,19 @@ export default function Navbar() {
           <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer mr-8 py-2" onClick={() => window.scrollTo(0,0)}>
             <img 
               src="/Contemporary Minimalist Logo for inexa.space - Teal-1@1.25x.svg" 
-              alt="INEXA Logo" 
+              alt="EXA Space Logo" 
               className="h-8 md:h-10 lg:h-12 w-auto max-w-[160px] md:max-w-[220px] object-contain transform transition-transform hover:scale-105" 
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/products" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/products') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Products</Link>
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/products" className={`text-sm font-medium transition-colors ${location.pathname === '/products' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Products</Link>
+            <a href="/#ecosystem" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
             <Link to="/architecture" className={`text-sm font-medium transition-colors ${location.pathname === '/architecture' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Architecture</Link>
-            <a href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Ecosystem</a>
             <Link to="/company" className={`text-sm font-medium transition-colors ${location.pathname === '/company' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Company</Link>
-            <Link to="/research" className={`text-sm font-medium transition-colors ${location.pathname === '/research' ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Research</Link>
-            <Link to="/docs" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/docs') ? 'text-white' : 'text-slate-300 hover:text-white'}`}>Docs</Link>
-            <a href="/company#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
-            <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+            
+            <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors ml-4 pl-4 border-l border-slate-700">
               <GithubIcon className="w-5 h-5" />
             </a>
           </div>
@@ -62,56 +60,12 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="md:hidden glass border-t border-slate-800/50 overflow-hidden"
           >
-            <div className="px-4 pt-4 pb-6 flex flex-col space-y-4">
-              <Link 
-                to="/products" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname.startsWith('/products') ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Products
-              </Link>
-              <Link 
-                to="/architecture" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/architecture' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Architecture
-              </Link>
-              <a 
-                href={location.pathname === '/' ? '#ecosystem' : '/#ecosystem'} 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Ecosystem
-              </a>
-              <Link 
-                to="/company" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/company' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Company
-              </Link>
-              <Link 
-                to="/research" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname === '/research' ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Research
-              </Link>
-              <Link 
-                to="/docs" 
-                className={`px-3 py-2 rounded-md transition-colors ${location.pathname.startsWith('/docs') ? 'text-white bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800/50'}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Docs
-              </Link>
-              <a 
-                href="/company#contact" 
-                className="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
+            <div className="px-4 pt-4 pb-6 flex flex-col space-y-2">
+              <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-md transition-colors text-slate-300 hover:text-white hover:bg-slate-800/50">Products</Link>
+              <a href="/#ecosystem" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-md transition-colors text-slate-300 hover:text-white hover:bg-slate-800/50">Ecosystem</a>
+              <Link to="/architecture" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-md transition-colors text-slate-300 hover:text-white hover:bg-slate-800/50">Architecture</Link>
+              <Link to="/company" onClick={() => setIsMobileMenuOpen(false)} className="px-3 py-2 rounded-md transition-colors text-slate-300 hover:text-white hover:bg-slate-800/50">Company</Link>
+              
               <a 
                 href="https://github.com/exa-space" 
                 target="_blank" 

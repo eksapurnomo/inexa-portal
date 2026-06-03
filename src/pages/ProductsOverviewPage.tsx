@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Brain, Workflow, ShieldCheck, Route, Database, RotateCcw, Activity } from 'lucide-react';
+import { ChevronRight, ArrowRight, Brain, Workflow, Database, Globe, Shield, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ProductsOverviewPage() {
@@ -14,139 +14,193 @@ export default function ProductsOverviewPage() {
           <span className="text-slate-300">Products</span>
         </nav>
 
-        <main className="max-w-4xl py-12 pb-24">
-          <section className="mb-16">
+        <main className="max-w-5xl mx-auto py-12 pb-24">
+          <section className="mb-16 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-6">
-              INEXA Products
+              EXA Space Product Suite
             </h1>
             <p className="text-xl text-slate-400 leading-relaxed max-w-3xl tracking-tight">
-              Modular infrastructure for autonomous intelligence. Explore our foundational layers for cognition and execution.
+              Modular components of Hexa Platform for enterprise AI systems.
             </p>
           </section>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-24">
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="group flex flex-col"
-            >
-              <Link to="/products/hexa-cognitive" className="flex flex-col h-full p-8 border border-slate-800 rounded-2xl bg-slate-900/30 hover:bg-slate-900/60 hover:border-slate-700 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/50 flex items-center justify-center mb-6">
-                  <Brain className="w-6 h-6 text-slate-300" />
-                </div>
-                
-                <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Hexa Cognitive</h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                  Cognitive infrastructure for autonomous intelligence. Planning, adaptive replanning, and safe memory persistence.
-                </p>
-                
-                <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-wider">
-                  Explore Cognitive <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="group flex flex-col"
-            >
-              <Link to="/products/hexa-runtime" className="flex flex-col h-full p-8 border border-slate-800 rounded-2xl bg-slate-900/30 hover:bg-slate-900/60 hover:border-slate-700 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/50 flex items-center justify-center mb-6">
-                  <Workflow className="w-6 h-6 text-slate-300" />
-                </div>
-                
-                <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Hexa Runtime</h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
-                  Durable execution infrastructure for autonomous systems. Orchestration, routing, and observability built for reliability.
-                </p>
-                
-                <div className="mt-auto flex items-center text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors uppercase tracking-wider">
-                  Explore Runtime <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            </motion.div>
-
-          </div>
-
-          {/* WHY INEXA */}
-          <section className="pt-16 border-t border-slate-800/50">
-            <h2 className="text-3xl font-semibold tracking-tighter text-white mb-10">
-              Why INEXA
-            </h2>
-            
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[
-                { title: 'Runtime-Confirmed Memory Persistence', icon: ShieldCheck, desc: 'Memory is safely persisted to PostgreSQL only after the Runtime confirms a successful execution callback, preventing hallucination poisoning.' },
-                { title: 'Multi-Provider Failover Execution', icon: Route, desc: 'LLM Gateway uses circuit breakers (`aiobreaker`). If a provider hits timeouts or 5xx limits, traffic routes to fallback providers instantly.' },
-                { title: 'Hybrid Exact + Semantic Cache', icon: Database, desc: 'Combines Redis for exact SHA-256 hash caching with Qdrant for semantic vector matching, drastically reducing token waste.' },
-                { title: 'Durable Telemetry Pipeline', icon: Activity, desc: 'Sub-cent token tracking is pushed to a Redis Dead-Letter Queue (DLQ), ensuring observability failures never crash the main loop.' },
-                { title: 'Adaptive Replanning Architecture', icon: RotateCcw, desc: 'When execution fails, Hexa Cognitive parses the runtime error and dynamically patches the DAG up to 3 times before aborting.' },
-                { title: 'Vendor-Agnostic Deployment', icon: Workflow, desc: 'Completely uncoupled from specific cloud vendors or foundation models, allowing deployment across bare-metal, Vast.ai, AWS, or Azure.' }
-              ].map(feature => (
-                <div key={feature.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20 hover:bg-slate-900/40 hover:-translate-y-1 hover:shadow-[0_8px_24px_-8px_rgba(99,102,241,0.15)] hover:border-slate-700/80 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-3 text-white">
-                    <feature.icon className="w-5 h-5 text-slate-400" />
-                    <h3 className="font-semibold text-sm">{feature.title}</h3>
+          {/* MAIN PRODUCT */}
+          <section className="mb-20">
+            <div className="p-8 md:p-12 border border-slate-800 rounded-3xl bg-gradient-to-b from-slate-900/80 to-slate-950 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-emerald-400"></div>
+              <div className="flex flex-col md:flex-row gap-10 justify-between items-start md:items-center">
+                <div>
+                  <div className="inline-block px-3 py-1 mb-4 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-widest">
+                    Main Product
                   </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* DEPLOYMENT TARGETS */}
-          <section className="pt-16 mt-16 border-t border-slate-800/50">
-            <h2 className="text-3xl font-semibold tracking-tighter text-white mb-4">
-              Deployment Targets
-            </h2>
-            <p className="text-slate-400 mb-10 leading-relaxed max-w-2xl">
-              Architectural patterns supported by INEXA's cognitive and runtime layers across key industries.
-            </p>
-
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: 'Enterprise Operations',
-                  items: ['Workflow Automation', 'Internal AI Copilot', 'Knowledge Systems', 'Process Orchestration']
-                },
-                {
-                  title: 'Digital Finance',
-                  items: ['Risk Analysis', 'Lending Automation', 'Fraud Detection', 'AI Financial Services']
-                },
-                {
-                  title: 'Marketplace Platforms',
-                  items: ['Product Intelligence', 'Seller Copilot', 'Content Moderation', 'Recommendation Systems']
-                },
-                {
-                  title: 'Logistics & Supply Chain',
-                  items: ['Fleet Coordination', 'Route Optimization', 'Inventory Intelligence', 'Supply Monitoring']
-                },
-                {
-                  title: 'Public Sector',
-                  items: ['Citizen Services', 'Case Management', 'Knowledge Access', 'Digital Operations']
-                }
-              ].map(target => (
-                <div key={target.title} className="p-6 border border-slate-800/60 rounded-xl bg-slate-900/20">
-                  <h3 className="font-semibold text-white mb-4">{target.title}</h3>
-                  <ul className="space-y-2">
-                    {target.items.map(item => (
-                      <li key={item} className="text-sm text-slate-400 flex items-start">
-                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 mr-3 flex-shrink-0 opacity-60"></span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hexa Platform</h2>
+                  <p className="text-xl text-slate-400 font-medium mb-6">Human-Governed AI Workforce System</p>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {['Orchestration Layer', 'Execution Engine', 'Memory System', 'Knowledge Integration', 'Governance & Approval System'].map((item) => (
+                      <li key={item} className="flex items-center text-slate-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-3 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
                         {item}
                       </li>
                     ))}
                   </ul>
+
+                  <div className="flex flex-wrap gap-4">
+                    <Link to="/architecture" className="flex items-center px-6 py-3 bg-white text-slate-950 font-semibold rounded-lg hover:bg-slate-200 transition-colors">
+                      Explore Architecture <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                    <a href="/company#contact" className="flex items-center px-6 py-3 border border-slate-700 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+                      Request Demo <ArrowUpRight className="w-4 h-4 ml-2 text-slate-400" />
+                    </a>
+                  </div>
                 </div>
-              ))}
+                
+                {/* Abstract Visual Representation */}
+                <div className="hidden lg:flex w-72 h-72 rounded-full border border-slate-800 bg-slate-900/50 items-center justify-center relative">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.1)_0%,transparent_70%)] rounded-full"></div>
+                  <div className="w-48 h-48 rounded-full border border-slate-700/50 flex items-center justify-center">
+                    <div className="w-24 h-24 rounded-full bg-slate-800 flex items-center justify-center shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+                      <div className="w-12 h-12 rounded-full bg-indigo-500/20 border border-indigo-500/40"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ARCHITECTURE COMPONENTS */}
+          <section>
+            <div className="flex items-center mb-10">
+              <h2 className="text-2xl font-semibold tracking-tighter text-white">Architecture Components</h2>
+              <div className="h-px bg-slate-800 flex-grow ml-6"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <Link to="/products/hexa-cognitive" className="flex flex-col h-full p-6 border border-slate-800/80 rounded-2xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all group">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-blue-950/40 border border-blue-900/50 flex items-center justify-center text-blue-400">
+                      <Brain className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Hexa Cognitive</h3>
+                      <p className="text-xs text-blue-400/80 font-mono">The Planning Layer</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {['DAG Planning', 'Context Injection', 'AI Orchestration'].map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-center">
+                        <span className="w-1 h-1 rounded-full bg-slate-600 mr-2"></span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs font-semibold text-slate-500 group-hover:text-blue-400 transition-colors flex items-center">
+                    VIEW COMPONENT <ArrowRight className="w-3 h-3 ml-1" />
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+                <Link to="/products/hexa-runtime" className="flex flex-col h-full p-6 border border-slate-800/80 rounded-2xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all group">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-950/40 border border-indigo-900/50 flex items-center justify-center text-indigo-400">
+                      <Workflow className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Hexa Runtime</h3>
+                      <p className="text-xs text-indigo-400/80 font-mono">The Execution Layer</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {['LLM Execution', 'Tool Execution', 'Stateless Processing'].map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-center">
+                        <span className="w-1 h-1 rounded-full bg-slate-600 mr-2"></span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs font-semibold text-slate-500 group-hover:text-indigo-400 transition-colors flex items-center">
+                    VIEW COMPONENT <ArrowRight className="w-3 h-3 ml-1" />
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+                <Link to="/products/hexa-memory" className="flex flex-col h-full p-6 border border-slate-800/80 rounded-2xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all group">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-purple-950/40 border border-purple-900/50 flex items-center justify-center text-purple-400">
+                      <Database className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Hexa Memory</h3>
+                      <p className="text-xs text-purple-400/80 font-mono">The Experience Layer</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {['Vector Memory (pgvector)', 'Semantic Search', 'Execution History'].map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-center">
+                        <span className="w-1 h-1 rounded-full bg-slate-600 mr-2"></span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs font-semibold text-slate-500 group-hover:text-purple-400 transition-colors flex items-center">
+                    VIEW COMPONENT <ArrowRight className="w-3 h-3 ml-1" />
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+                <Link to="/products/hexa-knowledge" className="flex flex-col h-full p-6 border border-slate-800/80 rounded-2xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all group">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-emerald-950/40 border border-emerald-900/50 flex items-center justify-center text-emerald-400">
+                      <Globe className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Hexa Knowledge</h3>
+                      <p className="text-xs text-emerald-400/80 font-mono">The Data Layer</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {['SAP / SQL / REST Integration', 'Real-time Data Access', 'Secure Connectors'].map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-center">
+                        <span className="w-1 h-1 rounded-full bg-slate-600 mr-2"></span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs font-semibold text-slate-500 group-hover:text-emerald-400 transition-colors flex items-center">
+                    VIEW COMPONENT <ArrowRight className="w-3 h-3 ml-1" />
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
+                <Link to="/products/hexa-governance" className="flex flex-col h-full p-6 border border-slate-800/80 rounded-2xl bg-slate-900/30 hover:bg-slate-800/50 hover:border-slate-700 transition-all group">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-rose-950/40 border border-rose-900/50 flex items-center justify-center text-rose-400">
+                      <Shield className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">Hexa Governance</h3>
+                      <p className="text-xs text-rose-400/80 font-mono">The Control Layer</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 mb-6 flex-grow">
+                    {['Risk Engine (0–4)', 'Human Approval Workflow', 'Audit Trail'].map(item => (
+                      <li key={item} className="text-sm text-slate-400 flex items-center">
+                        <span className="w-1 h-1 rounded-full bg-slate-600 mr-2"></span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-xs font-semibold text-slate-500 group-hover:text-rose-400 transition-colors flex items-center">
+                    VIEW COMPONENT <ArrowRight className="w-3 h-3 ml-1" />
+                  </div>
+                </Link>
+              </motion.div>
+
             </div>
           </section>
 
         </main>
-
       </div>
     </div>
   );

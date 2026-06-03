@@ -12,7 +12,7 @@ export default function DocsPage() {
   // Default to introduction/overview if no slugs provided
   useEffect(() => {
     if (!sectionSlug || !pageSlug) {
-      navigate('/docs/introduction/overview', { replace: true });
+      navigate('/docs/architecture/full-stack-overview', { replace: true });
     }
   }, [sectionSlug, pageSlug, navigate]);
 

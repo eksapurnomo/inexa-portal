@@ -8,7 +8,7 @@ const researchPapers = [
     description: 'An analysis of memory-augmented reflection loops and their impact on reducing hallucination in durable AI execution environments.',
     date: 'Oct 2026',
     category: 'Autonomous Cognition',
-    authors: 'Inexa Research'
+    authors: 'EXA Space Research'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const researchPapers = [
     description: 'Evaluating fault-tolerance and retry semantics when orchestrating complex DAGs across heterogeneous LLM providers.',
     date: 'Sep 2026',
     category: 'Orchestration Systems',
-    authors: 'Inexa Core'
+    authors: 'EXA Space Core'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const researchPapers = [
     description: 'Applying zk-SNARKs to guarantee the cryptographic correctness of ML model outputs without exposing proprietary model weights.',
     date: 'Aug 2026',
     category: 'Adaptive Intelligence',
-    authors: 'Inexa Cryptography Lab'
+    authors: 'EXA Space Cryptography Lab'
   }
 ];
 

@@ -19,11 +19,11 @@ export default function Footer() {
           <div className="md:col-span-1">
             <img 
               src="/Contemporary Minimalist Logo for inexa.space - Teal-1@1.25x.svg" 
-              alt="INEXA Logo" 
+              alt="EXA Space Logo" 
               className="h-8 w-auto object-contain mb-6" 
             />
             <p className="text-sm text-slate-400 mb-6">
-              Building the infrastructure layer for autonomous intelligence and enterprise AI orchestration.
+              Human-Governed AI Infrastructure. Core Infrastructure for Enterprise AI Systems.
             </p>
             <div className="flex space-x-4">
               <a href="https://github.com/exa-space" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors">
@@ -38,8 +38,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Products</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/products/hexa-runtime" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</Link></li>
               <li><Link to="/products/hexa-cognitive" className="text-slate-400 hover:text-white transition-colors">Hexa Cognitive</Link></li>
+              <li><Link to="/products/hexa-runtime" className="text-slate-400 hover:text-white transition-colors">Hexa Runtime</Link></li>
+              <li><Link to="/products/hexa-memory" className="text-slate-400 hover:text-white transition-colors">Hexa Memory</Link></li>
+              <li><Link to="/products/hexa-knowledge" className="text-slate-400 hover:text-white transition-colors">Hexa Knowledge</Link></li>
+              <li><Link to="/products/hexa-governance" className="text-slate-400 hover:text-white transition-colors">Hexa Governance</Link></li>
               <li><Link to="/docs" className="text-slate-400 hover:text-white transition-colors">Documentation</Link></li>
             </ul>
           </div>
@@ -66,7 +69,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800/80 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-          <p>&copy; {currentYear} Copyright INEXA. All rights reserved.</p>
+          <p>&copy; {currentYear} Copyright EXA Space. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="mailto:eksa@inexa.space" className="hover:text-white transition-colors">eksa@inexa.space</a>
           </div>
