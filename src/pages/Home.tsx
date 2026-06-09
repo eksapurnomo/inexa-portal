@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
 import ProvidersStrip from '../components/ProvidersStrip';
 import BrandStatement from '../components/BrandStatement';
-import Metrics from '../components/Metrics';
+import CorePrinciples from '../components/CorePrinciples';
 import Products from '../components/Products';
 import Architecture from '../components/Architecture';
 import Ecosystem from '../components/Ecosystem';
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <ProvidersStrip />
       <BrandStatement />
-      <Metrics />
+      <CorePrinciples />
       <Products />
       <Architecture />
       <Ecosystem />

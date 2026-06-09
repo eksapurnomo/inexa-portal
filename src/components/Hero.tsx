@@ -30,17 +30,26 @@ export default function Hero() {
             className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/80 text-slate-300 text-sm font-medium mb-10 shadow-sm backdrop-blur-sm"
           >
             <span className="flex h-2 w-2 rounded-full bg-slate-400"></span>
-            <span className="tracking-wide">Enterprise AI Infrastructure</span>
+            <span className="tracking-wide">AI Operating System</span>
           </motion.div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-semibold tracking-tight text-white mb-10">
-            Human-Governed AI <br />
-            <span className="text-slate-300 block mt-3">Infrastructure</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.15] font-semibold tracking-tight text-white mb-6">
+            We turn business logic into <br />
+            <span className="text-slate-300 text-3xl md:text-4xl lg:text-5xl block mt-4">executable intelligence.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 mb-14 max-w-3xl mx-auto leading-relaxed tracking-tight">
-            Core Infrastructure for Enterprise AI Systems
+          <p className="text-lg text-slate-400 mb-6 font-medium">Hexa is the infrastructure layer for autonomous AI systems.</p>
+          
+          <p className="text-base md:text-lg text-slate-500 mb-10 max-w-3xl mx-auto leading-relaxed tracking-tight">
+            Built to power reasoning, execution, memory, knowledge, and governance for real-world AI operations.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-3 mb-14 text-xs font-medium text-slate-400">
+            <span className="px-3 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50">✅ Cognitive Engine</span>
+            <span className="px-3 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50">✅ Deterministic Execution</span>
+            <span className="px-3 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50">🧠 Memory-First AI</span>
+            <span className="px-3 py-1.5 rounded-full border border-slate-700/50 bg-slate-900/50">🛡️ Governance-Aware</span>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

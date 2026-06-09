@@ -12,14 +12,17 @@ export default function BrandStatement() {
           className="space-y-8"
         >
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tighter leading-tight">
-            The Human-Governed AI <br className="hidden md:block" />
-            <span className="text-slate-400">Workforce Operating System.</span>
+            To be the foundational operating system <br className="hidden md:block" />
+            <span className="text-slate-400">that powers the transition to autonomous enterprise intelligence.</span>
           </h2>
           
           <div className="w-16 h-px bg-slate-700 mx-auto my-12" />
           
-          <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto tracking-tight font-light">
-            EXA Space is an enterprise AI infrastructure company delivering the Hexa Platform—a complete operating system providing Planning, Execution, Memory, Knowledge, and Governance to deploy secure AI workforces at scale.
+          <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-4xl mx-auto tracking-tight font-light mb-8">
+            We provide the critical framework required to coordinate, scale, and govern the intelligent enterprises of the future. Hexa transforms complex, unstructured operational goals into highly deterministic, autonomous execution at an enterprise scale.
+          </p>
+          <p className="text-base md:text-xl text-slate-500 font-medium max-w-3xl mx-auto tracking-tight">
+            Hexa is not an application layer. It is the operational substrate for autonomous intelligence.
           </p>
         </motion.div>
       </div>

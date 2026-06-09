@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400">
+  <defs>
+    <linearGradient id="gradExa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradCognitive" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradRuntime" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradFuture" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <style>
+    .title { font: bold 36px sans-serif; fill: white; }
+    .subtitle { font: 18px sans-serif; fill: #94a3b8; }
+    .engine-title { font: bold 22px sans-serif; fill: white; }
+    .item { font: bold 14px sans-serif; fill: white; }
+    .subitem { font: 12px sans-serif; fill: #e2e8f0; }
+    .arrow { stroke: #475569; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+  </style>
+
+  <rect width="1200" height="1400" fill="url(#gradExa)"/>
+  
+  <text x="600" y="60" text-anchor="middle" class="title">Hexa Infrastructure Engine</text>
+  <text x="600" y="90" text-anchor="middle" class="subtitle">Powered by Exa Space | The Core of Hexa Platform</text>
+  
+  <!-- Engine 1: Cognitive (Completed) -->
+  <g transform="translate(50, 140)">
+    <rect width="525" height="300" rx="12" fill="url(#gradCognitive)" filter="url(#shadow)"/>
+    <text x="30" y="40" class="engine-title">🧠 Hexa Cognitive</text>
+    <text x="30" y="65" class="subitem">The Brain: Skills, Tools &amp; Intent</text>
+    
+    <g transform="translate(30, 90)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Skill Hub</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">74+ Agentskills.io</text>
+    </g>
+    <g transform="translate(270, 90)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Tool Registry</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Swagger Scanner</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Auto-Classifier</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Domain Mapping</text>
+    </g>
+    <g transform="translate(270, 160)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">GitHub Importer</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Bulk Discovery</text>
+    </g>
+    <text x="260" y="260" text-anchor="middle" class="item" fill="#d1fae5">✅ PHASE A: COMPLETED</text>
+  </g>
+
+  <!-- Engine 2: Runtime (Completed) -->
+  <g transform="translate(625, 140)">
+    <rect width="525" height="300" rx="12" fill="url(#gradRuntime)" filter="url(#shadow)"/>
+    <text x="30" y="40" class="engine-title">⚡ Hexa Runtime</text>
+    <text x="30" y="65" class="subitem">The Muscle: Execution &amp; Control</text>
+    
+    <g transform="translate(30, 90)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Mission Control</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Plan Generation</text>
+    </g>
+    <g transform="translate(270, 90)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Risk Engine</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Safety Guardrails</text>
+    </g>
+    <g transform="translate(30, 160)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">Human-in-Loop</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Approval Flow</text>
+    </g>
+    <g transform="translate(270, 160)">
+      <rect width="220" height="50" rx="6" fill="white" fill-opacity="0.15"/>
+      <text x="110" y="20" text-anchor="middle" class="item">API Executor</text>
+      <text x="110" y="40" text-anchor="middle" class="subitem">Real-time Calls</text>
+    </g>
+    <text x="260" y="260" text-anchor="middle" class="item" fill="#dbeafe">✅ PHASE A: COMPLETED</text>
+  </g>
+
+  <path d="M 600 460 L 600 520" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Engine 3 & 4: Memory & Knowledge (In Progress) -->
+  <g transform="translate(50, 540)">
+    <rect width="1100" height="240" rx="12" fill="url(#gradFuture)" filter="url(#shadow)"/>
+    <text x="30" y="40" class="engine-title">🔮 Hexa Memory &amp; Knowledge (Phase B)</text>
+    
+    <g transform="translate(30, 70)">
+      <rect width="500" height="130" rx="8" fill="white" fill-opacity="0.1"/>
+      <text x="20" y="30" class="item">💾 Hexa Memory</text>
+      <text x="20" y="60" class="subitem">• Long-term Context Storage</text>
+      <text x="20" y="85" class="subitem">• User Preference Learning</text>
+      <text x="20" y="110" class="subitem">• Session State Management</text>
+    </g>
+    
+    <g transform="translate(570, 70)">
+      <rect width="500" height="130" rx="8" fill="white" fill-opacity="0.1"/>
+      <text x="20" y="30" class="item">📚 Hexa Knowledge</text>
+      <text x="20" y="60" class="subitem">• Enterprise RAG (Vector DB)</text>
+      <text x="20" y="85" class="subitem">• PDF/SOP Ingestion Pipeline</text>
+      <text x="20" y="110" class="subitem">• Semantic Search Engine</text>
+    </g>
+  </g>
+
+  <path d="M 600 800 L 600 860" class="arrow" marker-end="url(#arrowhead)"/>
+
+  <!-- Engine 5: Governance (Future) -->
+  <g transform="translate(50, 880)">
+    <rect width="1100" height="180" rx="12" fill="#334155" filter="url(#shadow)"/>
+    <text x="30" y="40" class="engine-title">🛡️ Hexa Governance (Phase C)</text>
+    
+    <g transform="translate(30, 70)">
+      <rect width="320" height="80" rx="8" fill="white" fill-opacity="0.05"/>
+      <text x="160" y="30" text-anchor="middle" class="item">RBAC &amp; Permissions</text>
+      <text x="160" y="55" text-anchor="middle" class="subitem">Granular Access Control</text>
+    </g>
+    <g transform="translate(390, 70)">
+      <rect width="320" height="80" rx="8" fill="white" fill-opacity="0.05"/>
+      <text x="160" y="30" text-anchor="middle" class="item">Audit Trail</text>
+      <text x="160" y="55" text-anchor="middle" class="subitem">Immutable Execution Logs</text>
+    </g>
+    <g transform="translate(750, 70)">
+      <rect width="320" height="80" rx="8" fill="white" fill-opacity="0.05"/>
+      <text x="160" y="30" text-anchor="middle" class="item">Compliance Engine</text>
+      <text x="160" y="55" text-anchor="middle" class="subitem">SOC2 / ISO27001 Ready</text>
+    </g>
+  </g>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#475569" />
+    </marker>
+  </defs>
+</svg>
