@@ -44,6 +44,7 @@ export default function ArchitecturePage() {
               <SidebarLink href="#enterprise-principles">Enterprise Principles</SidebarLink>
               <SidebarLink href="#ai-ecosystem">AI Provider Ecosystem</SidebarLink>
               <SidebarLink href="#infrastructure-portability">Infrastructure Portability</SidebarLink>
+              <SidebarLink href="#workflow-automation">Workflow Automation</SidebarLink>
             </div>
           </aside>
 
@@ -339,7 +340,179 @@ export default function ArchitecturePage() {
               </div>
             </section>
 
+            {/* WORKFLOW AUTOMATION */}
+            <section id="workflow-automation" className="py-16 border-b border-slate-800/50">
+              {/* SECTION 1 — INTRODUCTION */}
+              <h2 className="text-2xl font-semibold text-white tracking-tight mb-4">Workflow Automation</h2>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                Traditional automation executes predefined workflows.
+              </p>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                Hexa extends automation with retrieval, reasoning, memory, governance, and observability—transforming workflows into governed autonomous systems.
+              </p>
+              <p className="text-slate-400 mb-12 leading-relaxed">
+                Unlike conventional workflow engines, Hexa can understand context, retrieve institutional knowledge, evaluate risk, and execute actions under policy control.
+              </p>
 
+              {/* SECTION 2 — COGNITIVE WORKFLOW LIFECYCLE */}
+              <div className="mb-16">
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-4">Cognitive Workflow Lifecycle</h3>
+                <p className="text-slate-400 mb-8 leading-relaxed">
+                  Every workflow executed by Hexa passes through retrieval, reasoning, governance validation, approval controls, execution, and memory consolidation.
+                </p>
+                <div className="p-2 border border-slate-800/80 rounded-xl bg-slate-900/30 overflow-hidden shadow-lg transition-transform duration-500 hover:scale-[1.02]">
+                  <img src="/RAG-and-Trace.svg" alt="Visual Cortex" className="w-full h-auto rounded-lg" />
+                </div>
+                <p className="text-sm text-slate-500 mt-4 text-center italic">
+                  Visual Cortex provides complete visibility into how autonomous decisions are formed, evaluated, approved, and executed.
+                </p>
+              </div>
+
+              {/* SECTION 3 — CORE COMPONENTS */}
+              <div className="mb-16">
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-6">Core Components</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">Agentic RAG Orchestrator</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      Retrieves SOPs, documentation, and enterprise knowledge before any decision is made.
+                    </p>
+                  </div>
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">Temporal & Domain Memory</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      Maintains historical context, approvals, policy evolution, and organizational intent across time.
+                    </p>
+                  </div>
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">Governance Shield</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      Evaluates actions against enterprise policies, risk thresholds, and approval requirements.
+                    </p>
+                  </div>
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">Visual Cortex</h4>
+                    <p className="text-sm text-slate-400 leading-relaxed">
+                      Provides complete auditability of reasoning, governance decisions, and workflow execution.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* SECTION 4 — ENTERPRISE SKILLS ECOSYSTEM */}
+              <div className="mb-16">
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-4">Enterprise Skills Ecosystem</h3>
+                <p className="text-slate-400 mb-6 leading-relaxed">
+                  Skills are deployable intelligence modules that extend the Cognitive Operating System without rebuilding workflows.
+                </p>
+                <p className="text-slate-400 mb-8 leading-relaxed">
+                  They encapsulate domain expertise, integrations, analytics, retrieval, and decision-making capabilities into reusable components.
+                </p>
+
+                <div className="mb-4 p-2 border border-indigo-900/30 rounded-xl bg-slate-900/30 overflow-hidden shadow-[0_0_15px_rgba(79,70,229,0.1)] transition-transform duration-500 hover:scale-[1.02]">
+                  <img src="/skills-hub.svg" alt="Enterprise Skills Hub" className="w-full h-auto rounded-lg" />
+                </div>
+                <p className="text-sm text-slate-500 mt-2 text-center italic mb-10">
+                  Enterprise Skills Hub enables organizations to deploy domain-specific intelligence modules across finance, operations, market research, compliance, and strategic analysis.
+                </p>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3">Financial Intelligence</h5>
+                    <ul className="space-y-2 text-sm text-slate-400">
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Company Valuation</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> SaaS Valuation Compression</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Stock Correlation</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Stock Liquidity</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Funda Data</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3">Market Intelligence</h5>
+                    <ul className="space-y-2 text-sm text-slate-400">
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Finance Sentiment</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> TradingView Reader</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3">Communication Intelligence</h5>
+                    <ul className="space-y-2 text-sm text-slate-400">
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Twitter Reader</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Telegram Reader</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Discord Reader</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> LinkedIn Reader</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3">Research & Strategy</h5>
+                    <ul className="space-y-2 text-sm text-slate-400">
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Startup Analysis</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> VC Reader</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> SEPA Strategy</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-slate-300 uppercase tracking-widest mb-3">Geopolitical Monitoring</h5>
+                    <ul className="space-y-2 text-sm text-slate-400">
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 bg-slate-600 rounded-full mr-3"></span> Hormuz Strait Monitoring</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                  <p className="text-sm font-medium text-white mb-3">Architecture Note</p>
+                  <p className="text-sm text-slate-400 mb-3">Skills are first-class components inside Hexa. Every Skill can leverage:</p>
+                  <ul className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm text-slate-300 mb-3">
+                    <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Agentic RAG</li>
+                    <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Temporal Memory</li>
+                    <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Governance Shield</li>
+                    <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Visual Cortex</li>
+                  </ul>
+                  <p className="text-sm text-slate-400">
+                    ensuring all autonomous actions remain observable, auditable, and policy compliant.
+                  </p>
+                </div>
+              </div>
+
+              {/* SECTION 5 — ENTERPRISE APPLICATIONS */}
+              <div className="mb-16">
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-6">Enterprise Applications</h3>
+                <div className="space-y-6">
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">IT Operations & SRE</h4>
+                    <p className="text-sm text-slate-400 mb-4">Governed infrastructure automation and incident remediation aligned with enterprise policies.</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-widest mb-2 font-semibold">Examples:</p>
+                    <ul className="space-y-1 text-sm text-slate-400 list-disc list-inside mb-4">
+                      <li>Scale infrastructure</li>
+                      <li>Restart services</li>
+                      <li>Execute remediation playbooks</li>
+                    </ul>
+                    <p className="text-sm text-slate-400 italic">while respecting approval workflows.</p>
+                  </div>
+                  
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">Customer Support & VIP Routing</h4>
+                    <p className="text-sm text-slate-400">Memory-aware routing, escalation, and refund decisions based on historical interactions and organizational policies.</p>
+                  </div>
+
+                  <div className="p-6 border border-slate-800/80 rounded-xl bg-slate-900/30">
+                    <h4 className="text-white font-medium mb-2">FinOps & Compliance</h4>
+                    <p className="text-sm text-slate-400">Policy-driven autonomous execution with full audit trails, approval controls, and governance enforcement.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* SECTION 6 — CONCLUSION */}
+              <div>
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-4">From Workflow Automation to Cognitive Operations</h3>
+                <p className="text-slate-400 mb-4 leading-relaxed">
+                  Hexa combines retrieval, reasoning, governance, execution, and memory into a unified operational architecture for enterprise AI systems.
+                </p>
+                <p className="text-slate-400 leading-relaxed">
+                  This enables organizations to move beyond deterministic automation toward governed autonomy while preserving transparency, accountability, and operational control.
+                </p>
+              </div>
+            </section>
 
           </main>
         </div>
